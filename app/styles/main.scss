@@ -1,0 +1,322 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+body {
+    background: #eee;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.header-label {
+    /*text-align: center;*/
+    /*text-shadow: #FFF 0 1px 0, #444 0 -1px;*/
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #aaa;
+}
+
+.notification-icon {
+    color: #666;
+    margin-left: 5px;
+}
+/*
+.form-control:focus{
+    border-color : #999;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(100, 100, 100, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(100, 100, 100, 0.6);
+}*/
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+
+    /* Make the masthead heading the same height as the navigation */
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 19px;
+    }
+
+    .nav {
+        height: 30px;
+        margin-top: 25px;
+        li {
+            vertical-align: middle;
+            a {
+                color: #777;
+
+                .active: {
+                    background: #eee;
+                }
+            }
+        }
+    }
+
+    .dropdown-menu {
+        li {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+}
+
+/*Layout styles*/
+
+.container {
+    height: 100%;
+    padding: 0px;
+
+    .jumbotron {
+        text-align: center;
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 0px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative;
+
+        &.variable-height {
+            height: 100%;
+        }
+
+    }
+}
+
+.chat-region {
+    height: 500px;
+}
+
+.main-row {
+    height: 100%;
+}
+
+#main-region {
+    padding: 0px;
+    height: 500px;
+}
+.sidebar {
+    min-height: 100px;
+    padding: 0px;
+}
+
+
+
+/* login page styling */
+
+#login-label {
+    margin-top: 40px;
+}
+
+/* chat styles */
+.well {
+    &.list-container {
+        height: 100%;
+        margin-bottom: 0px;
+        overflow-y: auto;
+        word-wrap: break-word;
+        min-height: 100px;
+    }
+}
+
+#chat-messages-container {
+    position: absolute;
+    top: 10px;
+    bottom: 60px;
+    left: 10px;
+    right: 10px;
+    height: initial;
+
+}
+
+#send-message-group {
+    position: absolute;
+    bottom: 15px;
+    left:   10px;
+    right:  10px;
+    display: inline-block;
+}
+
+/* chat - itemview */
+.chat-region {
+    height: 100%;
+}
+
+.chat-message {
+    line-height: 20px;
+    font-size: 17px;
+    text-align: left;
+}
+
+#message-sender {
+    font-size: 15px;
+}
+
+#message-text {
+    padding-left: 10px;
+    margin-bottom: 8px;
+}
+
+.text-small {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/*userlist styles*/
+
+#user-list {
+    padding: 0px;
+}
+
+.single-contact {
+    border: 0px;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #eeeeee;
+}
+
+.panel-title {
+    font-weight: inherit;
+}
+/* conversation styles */
+
+
+.row {
+    margin: 0px;
+}
+
+.conversation {
+    margin-bottom: 10px;
+}
+
+#conversations-region {
+    margin-top: 30px;
+}
+
+
+.conversation-panel {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+
+.panel-heading {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+#conversation-person-name {
+    height: 25px;
+}
+
+.conversation-body {
+    height: 250px;
+}
+
+#conversation-messages-container {
+    overflow-y: auto;
+    word-wrap: break-word;
+    position: absolute;
+    padding: 5px;
+    margin-bottom: 0px;
+    height: 225px;
+    bottom: 30px;
+    left: 0px;
+    right: 0px;
+}
+
+#conversation-input-container {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 30px;
+    width: 100%;
+}
+
+#conversation-msg-input {
+    height: 100%;
+    border-top-style: none;
+    padding: 0px;
+}
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        /*max-width: 730px;*/
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 0px;
+    }
+    
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+        padding-top: 10px;
+    }
+
+    .panel-title {
+        color: #555555;
+    }
+
+
+}
+
+@media screen and (min-width: 992px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .main-row {
+        height: 500px;
+    }
+
+    .sidebar {
+        padding-left: 20px;
+    }
+    
+
+    .bottom-row {
+        position: absolute;
+        bottom: 0px;
+        width: inherit;
+        height: 1px;
+        margin: 0px;
+    }
+
+    .conversation-panel {
+        position: absolute;
+        bottom: -49px;
+    }
+
+    #conversations-region {
+        margin-left: -5px;
+        margin-right: 25px;
+    }
+
+/*    .jumbotron {
+        &.variable-height {
+            height: 100%;
+        }
+    }*/
+}
+

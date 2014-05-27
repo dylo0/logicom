@@ -1,0 +1,26 @@
+on connection:
+	send avaiable users list to connecting peer
+	brodcast 'new:user' for all peers
+
+	//later: instead of brodcasting to all get from db 'hasInContacs' list for that id and emit for all
+
+	//later: send conversation messages found in database for undelivered messages
+
+on send conversation:message:
+	find adresser id
+	emit new:message for found socket
+	//later: if id unavaiable store msg in database
+	//later: store msg in conversations history
+
+on send chat:message:
+	braodcast message to all users
+
+on disconnect:
+	broadcast 'user disconnected' to all users
+
+	//later:  instead of broadcasting to all - broadcast to 'hasInContacts'
+
+
+
+sass 3.2.13
+sass 3.3.0 rc2
