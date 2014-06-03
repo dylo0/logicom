@@ -25,15 +25,15 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
         });
     });
 
-            { name: "Ładunki", url: "packages", navigationTrigger: "show:module:packages" },
-            { name: "Pojazdy", url: "vehicles", navigationTrigger: "show:module:vehicles" },
-            { name: "Chat", url: "chat", navigationTrigger: "show:module:chat" },
-            { name: "Moje oferty", url: "myoffers", navigationTrigger: "show:module:myoffers" },
-            { name: "Forum", url: "discussion", navigationTrigger: "show:module:discussion" },
-            { name: "Więcej", url: "", navigationTrigger: "show:module:other", nestedLinks: [
-                { name: "Baza firm", url: "companies", navigationTrigger: "show:module:companies" },
-                { name: "Kontakty", url: "allcontacts", navigationTrigger: "show:module:allrcontacts" },
-                { name: "Archiwum", url: "archive", navigationTrigger: "show:module:archive" }
+            // { name: "Ładunki", url: "packages", navigationTrigger: "show:module:packages" },
+            // { name: "Pojazdy", url: "vehicles", navigationTrigger: "show:module:vehicles" },
+            // { name: "Chat", url: "chat", navigationTrigger: "show:module:chat" },
+            // { name: "Moje oferty", url: "myoffers", navigationTrigger: "show:module:myoffers" },
+            // { name: "Forum", url: "discussion", navigationTrigger: "show:module:discussion" },
+            // { name: "Więcej", url: "", navigationTrigger: "show:module:other", nestedLinks: [
+            //     { name: "Baza firm", url: "companies", navigationTrigger: "show:module:companies" },
+            //     { name: "Kontakty", url: "allcontacts", navigationTrigger: "show:module:allrcontacts" },
+            //     { name: "Archiwum", url: "archive", navigationTrigger: "show:module:archive" }
 
     AppManager.commands.setHandler('start:subapplication', function (appname, args) {
         AppManager.startSubApp(appName, args)
@@ -58,7 +58,7 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
         AppManager.currentApp = currentApp;
         
         if(currentApp){
-            AppManager.execute("set:active:header")
+            AppManager.execute("set:active:header", "packages");
             currentApp.start(args);
         }
     };
