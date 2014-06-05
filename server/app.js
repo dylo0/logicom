@@ -1,13 +1,16 @@
 'use strict';
 
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var async = require('async');
-var hbs = require('express-hbs');
-var baucis = require('baucis');
-var socketIO = require('socket.io');
-var mongoose = require('mongoose');
+var express = require('express'),
+	http = require('http'),
+	path = require('path'),
+	async = require('async'),
+	hbs = require('express-hbs'),
+	baucis = require('baucis'),
+	socketIO = require('socket.io'),
+	mongoose = require('mongoose'),
+	communicator = require('lib/communicator'),
+	router = require('./router');
+
 
 
 // start mongoose
@@ -52,73 +55,21 @@ db.once('open', function callback () {
 
 
 	// route index.html
-	app.get('/', function(req, res){
-	  res.sendfile( path.join( __dirname, '../app/index.html' ) );
-	});
+	router.setupRoutes(app);
 
 	// start server
 	var server =http.createServer(app)
 
-	var io = socketIO.listen(server)
+	
+	// bind websockets logic
+	communicator.createSocket(server);
 
 	server.listen(app.get('port'), function(){
 	    console.log('Express App started!');
 	});
 
-	// id's present only for future app logic
-	var users = {};
-	var idHash = {};
-	var currentID = 1;
 
-	io.sockets.on('connection', function(socket) {
-		
-		socket.on('new:user', function (username, callback) {
-			if (username in users) {
-				callback({error: {type: "user:exists"}});
-			} else {
-				var data = {
-					id: currentID,
-					username: username
-				};
-				socket.username = username;
-				socket.idnumber = currentID;
-				users[username] = socket;
-				idHash[currentID] = username;
-				currentID += 1;
 
-				callback(data);
-				socket.broadcast.emit('user:connected', data);
-			}
-		});
-
-		socket.on('request:user:list', function (callback) {
-			callback(idHash);
-		});
-
-		socket.on('send:message', function  (data) {
-			var reciverUsername = idHash[data.reciver],
-				reciver = users[reciverUsername];
-			
-			if (reciver) {
-				reciver.emit('incoming:message', {
-					sender: socket.idnumber, 
-					message: data.msg 
-				});
-			}
-		});
-
-		socket.on('send:chat:message', function (data) {
-			// data.sender = socket.idnumber;
-			// TODO: add message validation before emitting
-			socket.broadcast.emit('incoming:chat:message', data);
-		});
-
-		socket.on('disconnect', function () {
-			var id = socket.idnumber
-			delete idHash[id];
-			delete users[socket.username];
-			socket.broadcast.emit('user:disconnected', id)
-		});
 	});
 });
 
