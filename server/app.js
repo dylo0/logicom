@@ -5,12 +5,13 @@ var express = require('express'),
 	path = require('path'),
 	async = require('async'),
 	hbs = require('express-hbs'),
+	flash    = require('connect-flash'),
 	baucis = require('baucis'),
-	socketIO = require('socket.io'),
 	mongoose = require('mongoose'),
-	communicator = require('lib/communicator'),
-	router = require('./router');
-
+	router = require('./router'),
+	communicator = require('./modules/communicator'),
+	passport = require('passport'),
+	session = require('express-session');
 
 
 // start mongoose
@@ -36,12 +37,12 @@ db.once('open', function callback () {
 
 	app.configure(function(){
 	    app.set('port', 9000);
-
-	    app.set('view engine', 'handlebars');
-	    app.set('views', __dirname + '../app/scripts/views');
+		app.set('views', __dirname + '/views');
+	    app.set('view engine', 'ejs');
+	    // app.set('views', __dirname + '../app/scripts/views');
 	});
 
-    app.use('/api/v1', baucis());
+    // app.use('/api/v1', baucis());
 
 	// simple log
 	app.use(function(req, res, next){
@@ -53,9 +54,17 @@ db.once('open', function callback () {
 	app.use(express.static( path.join( __dirname, '../app') ));
 	app.use(express.static( path.join( __dirname, '../.tmp') ));
 
+	// reqired for passport 
+	app.use( express.cookieParser() );
+	app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+	app.use(passport.initialize());
+	app.use(passport.session()); // persistent login sessions
+	app.use(flash()); // use connect-flash for flash messages stored in session
 
-	// route index.html
-	router.setupRoutes(app);
+
+	require('./config/passport')(passport); // pass passport for configuration
+
+	require('./router')(app, passport);
 
 	// start server
 	var server =http.createServer(app)
@@ -68,9 +77,6 @@ db.once('open', function callback () {
 	    console.log('Express App started!');
 	});
 
-
-
-	});
 });
 
 
