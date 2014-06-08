@@ -8,7 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -25,10 +25,14 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a ng-href="#">Home</a></li>
+          <li><a ng-href="#/users">Users</a></li>
+          <li><a ng-href="#/loads">Loads</a></li>
+          <li><a ng-href="#/vehicles">Vehicles</a></li>
+          <li><a ng-href="#/boards">Boards</a></li>
+          <li><a ng-href="#/stats">Stats</a></li>
           <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
         </ul>
-        <h3 class="text-muted">adminPanel</h3>
+        <h3 class="text-muted">Admin panel</h3>
       </div>
 
       <div ng-view=""></div>
