@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc function
- * @name adminPanelApp.controller:UserCtrl
+ * @name adminPanelApp.controller:CompanyCtrl
  * @description
  * # CompanyCtrl
  * Controller of the adminPanelApp
@@ -11,7 +11,7 @@ angular.module('adminPanelApp')
   .controller('CompanyCtrl', function ($scope) {
     $scope.allUsers = [
       {
-        companyName:
+        companyName: 'asd',
         users: [{
             name: "Tomasz",
             surname: "Dyl",

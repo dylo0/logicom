@@ -14,39 +14,47 @@ angular
     'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'ui.bootstrap',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/')
+
+    $stateProvider
+      .state('/', {
+        url: '/',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/users', {
-        templateUrl: 'views/users.html',
-        controller: 'UserCtrl'
+      .state('/companies', {
+        url: '/companies',
+        templateUrl: 'views/companies.html',
+        controller: 'CompanyCtrl'
       })
-      .when('/loads', {
+      .state('/loads', {
+        url: '/loads',
         templateUrl: 'views/loads.html',
         controller: 'LoadCtrl'
       })
-      .when('/vehicles', {
+      .state('/vehicles', {
+        url: '/vehicles',
         templateUrl: 'views/vehicles.html',
         controller: 'VehicleCtrl'
       })
-      .when('/boards', {
+      .state('/boards', {
+        url: '/boards',
         templateUrl: 'views/boards.html',
         controller: 'BoardCtrl'
       })
-      .when('/stats', {
+      .state('/stats', {
+        url: '/stats',
         templateUrl: 'views/stats.html',
         controller: 'VehicleCtrl'
       })
-      .when('/about', {
+      .state('/about', {
+        url: '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
   });
