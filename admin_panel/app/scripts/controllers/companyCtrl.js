@@ -8,7 +8,7 @@
  * Controller of the adminPanelApp
  */
 angular.module('adminPanelApp')
-  .controller('CompanyCtrl', function ($scope) {
+  .controller('CompanyCtrl', function ($scope, $modal) {
     $scope.allUsers = [
       {
         companyName: 'asd',
@@ -17,9 +17,17 @@ angular.module('adminPanelApp')
             surname: "Dyl",
             email: "tomasz@wp.pl",
         }]
-
       }
     ]
+
     $scope.newUser = [];
+
+    $scope.openModal = function () {
+      var modalInstance = $modal.open({
+        templateUrl: 'views/new_company.html',
+        controller: 'NewCompanyCtrl',
+        size: "lg"
+      });
+    }
 
   });
