@@ -42,14 +42,14 @@ angular.module('adminPanelApp')
       }
     ];
 
-    var openModal = function (company) {
+    var openModal = function (user) {
       var modalInstance = $modal.open({
-        templateUrl: 'views/new_company.html',
-        controller: 'NewCompanyCtrl',
+        templateUrl: 'views/edit_user.html',
+        controller: 'EditUserCtrl',
         size: "lg",
         resolve: {
-          company: function () {
-            return company;
+          user: function () {
+            return user;
           }
         }
       });
@@ -68,18 +68,8 @@ angular.module('adminPanelApp')
       })
     }
 
-    $scope.newCompany = function () {
-      console.log('opening new company')
-      // initializes first user for modal so modal will show her
-      var company = {
-        users: [{
-          id: 0
-        }]
-      };
-      openModal(company);
-    }
-
-    $scope.editCompany = function (company) {
+    $scope.editUser = function (user) {
+      console.log(user);
       // To be implemented
       // gets userList for a company from server 
       // $http.get('admin/companies/company.id').
@@ -91,7 +81,7 @@ angular.module('adminPanelApp')
       //     // body...
       //   });
 
-      openModal(company);
+      openModal(user);
     }
 
   });

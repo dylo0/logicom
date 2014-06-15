@@ -1,0 +1,74 @@
+<div class="modal-header">
+  <h3 class="modal-title">Add/edit company</h3>
+</div>
+<div class="modal-body">
+  <form novalidate class="form-horizontal" role="form">
+    <h4>User Details</h4>
+    <div class="well">
+      <fieldset disabled>
+      <div class="form-group">
+        <label for="user-id" class="col-sm-3 control-label">User Id</label>
+        <div class="col-sm-3">
+          <input type="email" class="form-control" id="user-id" 
+            placeholder="Email" ng-model="user.logicomId" ng-disabled="true" />
+        </div>
+
+        <label for="user-email" class="col-sm-2 control-label">Company name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="user-email" 
+            placeholder="Email" ng-model="user.company" ng-disabled="true" />
+        </div>
+      </div>
+      </fieldset>
+
+      <div class="form-group">
+        <label for="user-name" class="col-sm-3 control-label">Names *</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="user-name" 
+            placeholder="Names" ng-model="user.name" required />
+        </div>        
+
+        <label for="user-surname" class="col-sm-2 control-label">Surname *</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="user-surname" 
+            placeholder="Surname" ng-model="user.surname" required />
+        </div>        
+      </div>
+
+      <div class="form-group">
+        <label for="user-email" class="col-sm-3 control-label">Email address *</label>
+        <div class="col-sm-3">
+          <input type="email" class="form-control" id="user-email" 
+            placeholder="Email" ng-model="user.email" required />
+        </div>
+
+        <label for="user-function" class="col-sm-2 control-label">Function</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="user-function" 
+            placeholder="Function" ng-model="user.function" /required />
+        </div>        
+      </div>
+
+      <div class="form-group">
+        <label for="user-phone" class="col-sm-3 control-label">Phone number</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="user-phone" 
+            placeholder="Phone" ng-model="user.phone" />
+        </div>        
+
+        <label for="user-fax" class="col-sm-2 control-label">Fax number</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="user-fax" 
+            placeholder="Fax" ng-model="user.fax" />
+        </div>        
+      </div>
+      <button class="btn btn-danger" ng-click="resetPassword(user)">Request password recovery</button>
+    </div>
+  </form>
+
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok(company)">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

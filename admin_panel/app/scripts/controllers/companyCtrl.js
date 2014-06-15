@@ -20,7 +20,8 @@ angular.module('adminPanelApp')
         phone: "32 123 456",
         fax: "32 123 457",
         email: "biuro@logicom.pl",
-        www: "www.logicom.pl"
+        www: "www.logicom.pl",
+        users: [{id:0}]
       },
       {
         name: "Inna firma",
@@ -31,7 +32,8 @@ angular.module('adminPanelApp')
         phone: "32 432 432",
         fax: "32 432 123",
         email: "me@another.pl",
-        www: "www.another.pl"
+        www: "www.another.pl",
+        users: [{id:0}]
       },
       {
         name: "eurotrans",
@@ -42,7 +44,8 @@ angular.module('adminPanelApp')
         phone: "22 221 242",
         fax: "22 221 421",
         email: "biuro@eurotrans.com",
-        www: "eurotrans.com"
+        www: "eurotrans.com",
+        users: [{id:0}]
       }
     ];
 
