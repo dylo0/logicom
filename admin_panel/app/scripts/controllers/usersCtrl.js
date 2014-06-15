@@ -17,28 +17,28 @@ angular.module('adminPanelApp')
         email: "tomasz@mailinator.com",
         phone: "32 124 12 123",
         fax: "43 231 12312",
-        function: "admin",
+        function: "-",
         company: "logicom"
       },
       {
         logicomId: 1235123,
-        name: "Tomasz",
-        surname: "Dyl",
-        email: "tomasz@mailinator.com",
-        phone: "32 124 12 123",
-        fax: "43 231 12312",
-        function: "admin",
-        company: "logicom"
+        name: "Lukasz",
+        surname: "Maciejewski",
+        email: "lukasz@mailinator.com",
+        phone: "32 543 15 21",
+        fax: "33 654 45 44",
+        function: "Spedytor",
+        company: "mailinator"
       },
       {
         logicomId: 1235123,
-        name: "Tomasz",
-        surname: "Dyl",
-        email: "tomasz@mailinator.com",
-        phone: "32 124 12 123",
-        fax: "43 231 12312",
-        function: "admin",
-        company: "logicom"
+        name: "Patryk",
+        surname: "Stefanik",
+        email: "biuro@asd.com",
+        phone: "11 22 242 12 54",
+        fax: "11 23 423 23 12",
+        function: "Wlasciciel",
+        company: "asd"
       }
     ];
 

@@ -23,26 +23,26 @@ angular.module('adminPanelApp')
         www: "www.logicom.pl"
       },
       {
-        name: "Logicom",
-        adress: "Rybnicka 32A/2",
-        zip: "44-200",
-        city: "Gliwice",
-        tax: "635-12-53-11",
-        phone: "32 123 456",
-        fax: "32 123 457",
-        email: "biuro@logicom.pl",
-        www: "www.logicom.pl"
+        name: "Inna firma",
+        adress: "wodzislawska 15",
+        zip: "41-300",
+        city: "Rybnik",
+        tax: "63-22-54-111",
+        phone: "32 432 432",
+        fax: "32 432 123",
+        email: "me@another.pl",
+        www: "www.another.pl"
       },
       {
-        name: "Logicom",
-        adress: "Rybnicka 32A/2",
-        zip: "44-200",
-        city: "Gliwice",
-        tax: "635-12-53-11",
-        phone: "32 123 456",
-        fax: "32 123 457",
-        email: "biuro@logicom.pl",
-        www: "www.logicom.pl"
+        name: "eurotrans",
+        adress: "Lokietka 2",
+        zip: "44-223",
+        city: "Poznan",
+        tax: "123-321-12",
+        phone: "22 221 242",
+        fax: "22 221 421",
+        email: "biuro@eurotrans.com",
+        www: "eurotrans.com"
       }
     ];
 
