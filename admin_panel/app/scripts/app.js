@@ -32,6 +32,11 @@ angular
         templateUrl: 'views/companies.html',
         controller: 'CompanyCtrl'
       })
+      .state('/users', {
+        url: '/users',
+        templateUrl: 'views/users.html',
+        controller: 'UsersCtrl'
+      })
       .state('/loads', {
         url: '/loads',
         templateUrl: 'views/loads.html',

@@ -4,7 +4,7 @@
   <button type="button" class="btn btn-default" 
     ng-click="searchUser()">Search for user</button>
 </div>
-<input class="pull-right" type="text" ng-model="companySearch" placeholder=" Filter Companies" />
+<input class="pull-right" type="text" ng-model="companySearch" placeholder=" Search company" />
 
 <table class="table table-hover companies-table">
   <thead>
@@ -25,19 +25,19 @@
   </thead>
   <tbody>
     <tr ng-repeat="company in companies">
-      <th>{{$index + 1}}</th>
-      <th>{{company.name}}</th>
-      <th>{{company.adress}}</th>
-      <th>{{company.zip}}</th>
-      <th>{{company.city}}</th>
-      <th>{{company.tax}}</th>
-      <th>{{company.phone}}</th>
-      <th>{{company.email}}</th>
-      <th>{{company.www}}</th>
-      <th><button type="button" class="btn btn-default" 
-    ng-click="showUsers(company)">Show users</button></th>
-      <th><button type="button" class="btn btn-default" 
-    ng-click="editCompany(company)">Edit</button></th>
+      <td>{{$index + 1}}</td>
+      <td>{{company.name}}</td>
+      <td>{{company.adress}}</td>
+      <td>{{company.zip}}</td>
+      <td>{{company.city}}</td>
+      <td>{{company.tax}}</td>
+      <td>{{company.phone}}</td>
+      <td>{{company.email}}</td>
+      <td>{{company.www}}</td>
+      <td><button type="button" class="btn btn-default" 
+    ng-click="showUsers(company)">Show users</button></td>
+      <td><button type="button" class="btn btn-default" 
+    ng-click="editCompany(company)">Edit</button></td>
     </tr>
   </tbody>
 </table>

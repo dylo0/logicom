@@ -1,0 +1,33 @@
+<input class="pull-right bottom-offset" type="text" ng-model="companySearch" placeholder=" Search user" />
+
+<table class="table table-hover companies-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Fax</th>
+      <th>Function</th>
+      <th>Company</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users">
+      <td>{{$index + 1}}</td>
+      <td>{{user.logicomId}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.surname}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user.fax}}</td>
+      <td>{{user.function}}</td>
+      <td>{{user.company}}</td>
+      <td><button type="button" class="btn btn-default" 
+    ng-click="editCompany(company)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
