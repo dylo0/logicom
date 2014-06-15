@@ -13,6 +13,7 @@ angular.module('adminPanelApp')
     $scope.companies = [
       {
         name: "Logicom",
+        logicomId: "12312312312",
         adress: "Rybnicka 32A/2",
         zip: "44-200",
         city: "Gliwice",

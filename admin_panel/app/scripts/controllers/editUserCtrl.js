@@ -9,24 +9,11 @@
  */
 
 angular.module('adminPanelApp')
-  .controller('EditUserCtrl', function ($scope, $modalInstance, $modal, user) {
+  .controller('EditUserCtrl', function ($scope, $modalInstance, $modal, user, Modalconfirm) {
     $scope.user = user;
     $scope.resetPassword = function (user) {
-      var confirm = $modal.open({
-        templateUrl: 'views/modal.html',
-        controller: 'ModalCtrl',
-        size: "sm",
-        resolve: {
-          options: function () {
-            var params = {
-              message: "Are you really sure you want to reset password?",
-              title: "Confirm Action",
-              cancelButton: true
-            };
-            return params;
-          }
-        }
-      });
+      var msg = "Are you really sure you want to reset password for user " + user.email +"?";
+      var confirm = Modalconfirm.displayMessage(msg, "Warning", "md", true);
       
       confirm.result.then(function () {
         // to be implemented
@@ -39,7 +26,9 @@ angular.module('adminPanelApp')
         //   error(function (data, status) {
         //     console.log(data);
         //   })
-        console.log("Password reset request sent to user email @ " + user.email);
+        var msg = "Password reset instructions has been sent to " + user.email;
+
+        Modalconfirm.displayMessage(msg, "Notice", "md", false);
       });
     }
 
