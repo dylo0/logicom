@@ -9,9 +9,16 @@
  */
 
 angular.module('adminPanelApp')
-  .controller('NewCompanyCtrl', function ($scope, $modalInstance) {
+  .controller('NewCompanyCtrl', function ($scope, $modalInstance, company) {
+    $scope.company = company;
+
+    $scope.addUser = function () {
+      var uid = $scope.company.users.length;
+      $scope.company.users.push({'id':uid});
+    }
+
     $scope.ok = function () {
-      $modalInstance.close();
+      $modalInstance.close($scope.company);
     };
 
     $scope.cancel = function () {

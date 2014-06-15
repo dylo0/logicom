@@ -1,1 +1,43 @@
-<button class="brn btn-default" ng-click="openModal()">Add new</button>
+<div class="btn-group">
+  <button type="button" class="btn btn-default" 
+    ng-click="newCompany()">Add new company</button>
+  <button type="button" class="btn btn-default" 
+    ng-click="searchUser()">Search for user</button>
+</div>
+<input class="pull-right" type="text" ng-model="companySearch" placeholder=" Filter Companies" />
+
+<table class="table table-hover companies-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Adress</th>
+      <th>ZIP</th>
+      <th>City</th>
+      <th>TAX</th>
+      <th>Tel</th>
+      <th>Fax</th>
+      <th>Email</th>
+      <th>www</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="company in companies">
+      <th>{{$index + 1}}</th>
+      <th>{{company.name}}</th>
+      <th>{{company.adress}}</th>
+      <th>{{company.zip}}</th>
+      <th>{{company.city}}</th>
+      <th>{{company.tax}}</th>
+      <th>{{company.phone}}</th>
+      <th>{{company.email}}</th>
+      <th>{{company.www}}</th>
+      <th><button type="button" class="btn btn-default" 
+    ng-click="showUsers(company)">Show users</button></th>
+      <th><button type="button" class="btn btn-default" 
+    ng-click="editCompany(company)">Edit</button></th>
+    </tr>
+  </tbody>
+</table>

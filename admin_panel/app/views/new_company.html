@@ -2,54 +2,92 @@
   <h3 class="modal-title">Add/edit company</h3>
 </div>
 <div class="modal-body">
-
-
   <form novalidate role="form">
-    <h3>Company information</h3>
+    <h3>General information</h3>
     <div class="well">
       <div class="form-group">
         <label for="companyName">Company name *</label>
-        <input type="text" class="form-control" id="companyName" placeholder="Company name" ng-model="company.name" required />
+        <input type="text" class="form-control" id="companyName" 
+          placeholder="Company name" ng-model="company.name" required />
       </div>
       <div class="form-group">
         <label for="companyAdress">Adress *</label>
-        <input type="text" class="form-control" id="companyAdress" placeholder="Company adress" ng-model="company.adress" required />
+        <input type="text" class="form-control" id="companyAdress" 
+          placeholder="Company adress" ng-model="company.adress" required />
       </div>
       <div class="form-group">
         <label for="companyZip">Zip *</label>
-        <input type="number" class="form-control" id="companyZip" placeholder="ZIP adress" ng-model="company.zip" required />
+        <input type="text" class="form-control" id="companyZip" 
+          placeholder="ZIP code" ng-model="company.zip" required />
       </div>
       <div class="form-group">
         <label for="companyCity">City *</label>
-        <input type="text" class="form-control" id="companyCity" placeholder="City" ng-model="company.city" required />
+        <input type="text" class="form-control" id="companyCity" 
+          placeholder="City" ng-model="company.city" required />
       </div>
       <div class="form-group">
         <label for="companyTAX">TAX number *</label>
-        <input type="number" class="form-control" id="companyTAX" placeholder="TAX" ng-model="company.tax" required />
+        <input type="text" class="form-control" id="companyTAX" 
+          placeholder="TAX" ng-model="company.tax" required />
       </div>
       <div class="form-group">
         <label for="companyPhone">Phone number</label>
-        <input type="number" class="form-control" id="companyPhone" placeholder="Phone" ng-model="company.phone" />
+        <input type="text" class="form-control" id="companyPhone" 
+          placeholder="Phone" ng-model="company.phone" />
       </div>
       <div class="form-group">
         <label for="companyFax">Fax number</label>
-        <input type="number" class="form-control" id="companyPhone" placeholder="Fax" ng-model="company.fax" />
+        <input type="text" class="form-control" id="companyFax" 
+          placeholder="Fax" ng-model="company.fax" />
       </div>
       <div class="form-group">
         <label for="companyEmail">Email address</label>
-        <input type="email" class="form-control" id="companyEmail" placeholder="Email" ng-model="company.email" />
+        <input type="email" class="form-control" id="companyEmail" 
+          placeholder="Email" ng-model="company.email" />
+      </div>
+      <div class="form-group">
+        <label for="companyWWW">Website</label>
+        <input type="text" class="form-control" id="companyWWW" 
+          placeholder="text" ng-model="company.www" />
       </div>
     </div>
 
-    <h3>Users</h3>
+    <h3>Company Users</h3>
     <div class="well" ng-repeat="user in company.users">
       <div class="form-group">
-        <label for="userName">Email address</label>
-        <input type="email" class="form-control" id="userName" placeholder="Enter email">
+        <label for="user-{{user.id}}-email">Email address</label>
+        <input type="email" class="form-control" id="user-{{user.id}}-email" 
+          placeholder="Email" ng-model="company.users[user.id].email" />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label for="user-{{user.id}}-password">Password</label>
+        <input type="password" class="form-control" id="user-{{user.id}}-password" 
+          placeholder="Password" ng-model="company.users[user.id].password" />
+      </div>
+      <div class="form-group">
+        <label for="user-{{user.id}}-name">Names *</label>
+        <input type="text" class="form-control" id="user-{{user.id}}-name" 
+          placeholder="Names" ng-model="company.users[user.id].name" required />
+      </div>
+      <div class="form-group">
+        <label for="user-{{user.id}}-surname">Surname *</label>
+        <input type="text" class="form-control" id="user-{{user.id}}-surname" 
+          placeholder="Surname" ng-model="company.users[user.id].surname" required />
+      </div>
+      <div class="form-group">
+        <label for="user-{{user.id}}-function">Function</label>
+        <input type="text" class="form-control" id="user-{{user.id}}-function" 
+          placeholder="Function" ng-model="company.users[user.id].function" /required />
+      </div>
+      <div class="form-group">
+        <label for="user-{{user.id}}-phone">Phone number</label>
+        <input type="number" class="form-control" id="user-{{user.id}}-phone" 
+          placeholder="Phone" ng-model="company.users[user.id].phone" />
+      </div>
+      <div class="form-group">
+        <label for="user-{{user.id}}-fax">Fax number</label>
+        <input type="number" class="form-control" id="user-{{user.id}}-fax" 
+          placeholder="Fax" ng-model="company.users[user.id].fax" />
       </div>
     </div>
     <button class="btn btn-primary" ng-click="addUser()">Add user</button>
@@ -58,6 +96,6 @@
 
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-primary" ng-click="ok(company)">OK</button>
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
 </div>

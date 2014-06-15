@@ -23,17 +23,18 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <tabset type="pills">
-          <tab heading="Home" ui-sref="/" ui-sref-active="active"></tab>
-          <tab heading="Companies" ui-sref="/companies" ui-sref-active="active"></tab>
-          <tab heading="Loads" ui-sref="/loads" ui-sref-active="active"></tab>
-          <tab heading="Vehicles" ui-sref="/vehicles" ui-sref-active="active"></tab>
-          <tab heading="Boards" ui-sref="/boards" ui-sref-active="active"></tab>
-          <tab heading="Stats" ui-sref="/stats" ui-sref-active="active"></tab>
-          <tab heading="About" ui-sref="/about" ui-sref-active="active"></tab>
-        </tabset>
-
-        <h3 class="text-muted">Admin panel</h3>
+        <div class="row">
+          <h3 class="text-muted col-xs-6">Admin panel</h3>
+          <tabset type="pills col-xs-6">
+            <tab heading="Home" ui-sref="/" ui-sref-active="active"></tab>
+            <tab heading="Companies" ui-sref="/companies" ui-sref-active="active"></tab>
+            <tab heading="Loads" ui-sref="/loads" ui-sref-active="active"></tab>
+            <tab heading="Vehicles" ui-sref="/vehicles" ui-sref-active="active"></tab>
+            <tab heading="Boards" ui-sref="/boards" ui-sref-active="active"></tab>
+            <tab heading="Stats" ui-sref="/stats" ui-sref-active="active"></tab>
+            <tab heading="About" ui-sref="/about" ui-sref-active="active"></tab>
+          </tabset>
+        </div>
       </div>
 
       <div ui-view></div>
