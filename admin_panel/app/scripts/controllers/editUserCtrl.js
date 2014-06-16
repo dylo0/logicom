@@ -10,7 +10,8 @@
 
 angular.module('adminPanelApp')
   .controller('EditUserCtrl', function ($scope, $modalInstance, user, Modalconfirm) {
-    $scope.user = user;
+    $scope.user = angular.copy(user);
+    
     $scope.resetPassword = function (user) {
       var msg = "Are you really sure you want to reset password for user " + user.email +"?",
           confirm = Modalconfirm.displayMessage(msg, "Warning", "md", true);
