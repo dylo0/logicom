@@ -50,7 +50,7 @@ angular.module('adminPanelApp')
       }
     ];
 
-    var openModal = function (company) {
+    var openCompanyModal = function (company) {
       var modalInstance = $modal.open({
         templateUrl: 'views/new_company.html',
         controller: 'NewCompanyCtrl',
@@ -78,6 +78,54 @@ angular.module('adminPanelApp')
       })
     }
 
+    $scope.showUsers = function (company) {
+      // mock
+      var users = [{
+        logicomId: 1235123,
+        name: "Tomasz",
+        surname: "Dyl",
+        email: "tomasz@mailinator.com",
+        phone: "32 124 12 123",
+        fax: "43 231 12312",
+        function: "-",
+        company: "logicom"
+      },
+      {
+        logicomId: 1235123,
+        name: "Lukasz",
+        surname: "Maciejewski",
+        email: "lukasz@mailinator.com",
+        phone: "32 543 15 21",
+        fax: "33 654 45 44",
+        function: "Spedytor",
+        company: "mailinator"
+      },
+      {
+        logicomId: 1235123,
+        name: "Patryk",
+        surname: "Stefanik",
+        email: "biuro@asd.com",
+        phone: "11 22 242 12 54",
+        fax: "11 23 423 23 12",
+        function: "Wlasciciel",
+        company: "asd"
+      }]
+
+      var modalInstance = $modal.open({
+        templateUrl: 'views/show_users.html',
+        controller: 'ShowusersCtrl',
+        size: "lg",
+        resolve: {
+          users: function () {
+            return users;
+          },
+          company: function () {
+            return company;
+          }
+        }
+      });
+    }
+
     $scope.newCompany = function () {
       console.log('opening new company')
       // initializes first user for modal so modal will show her
@@ -86,7 +134,7 @@ angular.module('adminPanelApp')
           id: 0
         }]
       };
-      openModal(company);
+      openCompanyModal(company);
     }
 
     $scope.editCompany = function (company) {
@@ -101,7 +149,7 @@ angular.module('adminPanelApp')
       //     // body...
       //   });
 
-      openModal(company);
+      openCompanyModal(company);
     }
 
     $scope.setPaginationSize = function (size) {
