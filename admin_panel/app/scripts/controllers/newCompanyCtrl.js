@@ -14,7 +14,11 @@ angular.module('adminPanelApp')
 
     $scope.addUser = function () {
       var uid = $scope.company.users.length;
-      $scope.company.users.push({'id':uid});
+      $scope.company.users.push({});
+    }
+
+    $scope.removeUser = function (idx) {
+      $scope.company.users.splice(idx, 1);
     }
 
     $scope.ok = function () {

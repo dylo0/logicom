@@ -68,47 +68,49 @@
     </div>
 
     <h4>Company Users</h4>
-    <div class="well" ng-repeat="user in company.users">
-
+    <div class="user-data well" ng-repeat="user in company.users">
+    <div class="row">
+    <button type="button" class="close pull-left" aria-hidden="true" ng-show="company.users.length > 1" ng-click="removeUser($index)">&times;</button>
+    </div>
       <div class="form-group">
-        <label for="user-{{user.id}}-name" class="col-sm-3 control-label">Names *</label>
+        <label for="user-{{$index}}-name" class="col-sm-3 control-label">Names *</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" id="user-{{user.id}}-name" 
-            placeholder="Names" ng-model="company.users[user.id].name" required />
+          <input type="text" class="form-control" id="user-{{$index}}-name" 
+            placeholder="Names" ng-model="company.users[$index].name" required />
         </div>        
 
-        <label for="user-{{user.id}}-surname" class="col-sm-2 control-label">Surname *</label>
+        <label for="user-{{$index}}-surname" class="col-sm-2 control-label">Surname *</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="user-{{user.id}}-surname" 
-            placeholder="Surname" ng-model="company.users[user.id].surname" required />
+          <input type="text" class="form-control" id="user-{{$index}}-surname" 
+            placeholder="Surname" ng-model="company.users[$index].surname" required />
         </div>        
       </div>
 
       <div class="form-group">
-        <label for="user-{{user.id}}-email" class="col-sm-3 control-label">Email address *</label>
+        <label for="user-{{$index}}-email" class="col-sm-3 control-label">Email address *</label>
         <div class="col-sm-3">
-          <input type="email" class="form-control" id="user-{{user.id}}-email" 
-            placeholder="Email" ng-model="company.users[user.id].email" required />
+          <input type="email" class="form-control" id="user-{{$index}}-email" 
+            placeholder="Email" ng-model="company.users[$index].email" required />
         </div>
 
-        <label for="user-{{user.id}}-function" class="col-sm-2 control-label">Function</label>
+        <label for="user-{{$index}}-function" class="col-sm-2 control-label">Function</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="user-{{user.id}}-function" 
-            placeholder="Function" ng-model="company.users[user.id].function" />
+          <input type="text" class="form-control" id="user-{{$index}}-function" 
+            placeholder="Function" ng-model="company.users[$index].function" />
         </div>        
       </div>
 
       <div class="form-group">
-        <label for="user-{{user.id}}-phone" class="col-sm-3 control-label">Phone number</label>
+        <label for="user-{{$index}}-phone" class="col-sm-3 control-label">Phone number</label>
         <div class="col-sm-3">
-          <input type="number" class="form-control" id="user-{{user.id}}-phone" 
-            placeholder="Phone" ng-model="company.users[user.id].phone" />
+          <input type="number" class="form-control" id="user-{{$index}}-phone" 
+            placeholder="Phone" ng-model="company.users[$index].phone" />
         </div>        
 
-        <label for="user-{{user.id}}-fax" class="col-sm-2 control-label">Fax number</label>
+        <label for="user-{{$index}}-fax" class="col-sm-2 control-label">Fax number</label>
         <div class="col-sm-4">
-          <input type="number" class="form-control" id="user-{{user.id}}-fax" 
-            placeholder="Fax" ng-model="company.users[user.id].fax" />
+          <input type="number" class="form-control" id="user-{{$index}}-fax" 
+            placeholder="Fax" ng-model="company.users[$index].fax" />
         </div>        
       </div>
     </div>

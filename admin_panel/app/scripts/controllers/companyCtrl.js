@@ -22,7 +22,7 @@ angular.module('adminPanelApp')
         fax: "32 123 457",
         email: "biuro@logicom.pl",
         www: "www.logicom.pl",
-        users: [{id:0}]
+        users: [{}]
       },
       {
         name: "Inna firma",
@@ -34,7 +34,7 @@ angular.module('adminPanelApp')
         fax: "32 432 123",
         email: "me@another.pl",
         www: "www.another.pl",
-        users: [{id:0}]
+        users: [{}]
       },
       {
         name: "eurotrans",
@@ -46,7 +46,7 @@ angular.module('adminPanelApp')
         fax: "22 221 421",
         email: "biuro@eurotrans.com",
         www: "eurotrans.com",
-        users: [{id:0}]
+        users: [{}]
       }
     ];
 
