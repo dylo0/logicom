@@ -10,7 +10,7 @@
 
 angular.module('adminPanelApp')
   .controller('NewCompanyCtrl', function ($scope, $modalInstance, company) {
-    $scope.company = company;
+    $scope.company = angular.copy(company);
 
     $scope.addUser = function () {
       var uid = $scope.company.users.length;

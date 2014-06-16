@@ -72,6 +72,8 @@ angular.module('adminPanelApp')
         //   error(function (data) {
         //     // body...
         //   });
+
+        // TODO add searching for company already in scope - for edit
         $scope.companies.push(editedCompany);
       })
     }

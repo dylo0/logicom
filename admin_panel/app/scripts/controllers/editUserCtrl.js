@@ -12,8 +12,8 @@ angular.module('adminPanelApp')
   .controller('EditUserCtrl', function ($scope, $modalInstance, $modal, user, Modalconfirm) {
     $scope.user = user;
     $scope.resetPassword = function (user) {
-      var msg = "Are you really sure you want to reset password for user " + user.email +"?";
-      var confirm = Modalconfirm.displayMessage(msg, "Warning", "md", true);
+      var msg = "Are you really sure you want to reset password for user " + user.email +"?",
+          confirm = Modalconfirm.displayMessage(msg, "Warning", "md", true);
       
       confirm.result.then(function () {
         // to be implemented

@@ -2,20 +2,20 @@
   <h3 class="modal-title">Add/edit company</h3>
 </div>
 <div class="modal-body">
-  <form novalidate class="form-horizontal" role="form">
+  <form show-validation novalidate name="editCompany" class="form-horizontal" role="form">
     <h4>General information</h4>
     <div class="well">
       <div class="form-group">
         <label for="companyName" class="col-sm-3 control-label">Company name *</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="companyName" 
+          <input name="companyName" type="text" class="form-control" id="companyName" 
             placeholder="Company name" ng-model="company.name" required />
         </div>
       </div>
       <div class="form-group">
         <label for="companyTAX" class="col-sm-3 control-label">TAX number *</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="companyTAX" 
+          <input name="companyTax" type="text" class="form-control" id="companyTAX" 
             placeholder="TAX" ng-model="company.tax" required />
         </div>
       </div>
@@ -23,14 +23,14 @@
       <div class="form-group">
         <label for="companyAdress" class="col-sm-3 control-label">Adress *</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="companyAdress" 
+          <input name="companyAdress" type="text" class="form-control" id="companyAdress" 
             placeholder="Company adress" ng-model="company.adress" required />
         </div>        
       </div>
       <div class="form-group">
         <label for="companyZip" class="col-sm-3 control-label">Zip *</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" id="companyZip" 
+          <input name="companyZip" type="text" class="form-control" id="companyZip" 
             placeholder="ZIP code" ng-model="company.zip" required />
         </div>        
         <label for="companyCity" class="col-sm-2 control-label">City *</label>
@@ -42,26 +42,26 @@
       <div class="form-group">
         <label for="companyPhone" class="col-sm-3 control-label">Phone number</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" id="companyPhone" 
+          <input name="companyPhone" type="text" class="form-control" id="companyPhone" 
             placeholder="Phone" ng-model="company.phone" />
         </div>        
 
         <label for="companyFax" class="col-sm-2 control-label">Fax number</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="companyFax" 
+          <input name="companyFax" type="text" class="form-control" id="companyFax" 
             placeholder="Fax" ng-model="company.fax" />
         </div>
       </div>
       <div class="form-group">
         <label for="companyEmail" class="col-sm-3 control-label">Email address</label>
         <div class="col-sm-3">
-          <input type="email" class="form-control" id="companyEmail" 
+          <input name="companyEmail" type="email" class="form-control" id="companyEmail" 
             placeholder="Email" ng-model="company.email" />
         </div>        
 
         <label for="companyWWW" class="col-sm-2 control-label">Website</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="companyWWW" 
+          <input name="companyWWW" type="text" class="form-control" id="companyWWW" 
             placeholder="text" ng-model="company.www" />
         </div>
       </div>
@@ -85,16 +85,16 @@
       </div>
 
       <div class="form-group">
-        <label for="user-{{user.id}}-email" class="col-sm-3 control-label">Email address</label>
+        <label for="user-{{user.id}}-email" class="col-sm-3 control-label">Email address *</label>
         <div class="col-sm-3">
           <input type="email" class="form-control" id="user-{{user.id}}-email" 
-            placeholder="Email" ng-model="company.users[user.id].email" />
+            placeholder="Email" ng-model="company.users[user.id].email" required />
         </div>
 
         <label for="user-{{user.id}}-function" class="col-sm-2 control-label">Function</label>
         <div class="col-sm-4">
           <input type="text" class="form-control" id="user-{{user.id}}-function" 
-            placeholder="Function" ng-model="company.users[user.id].function" /required />
+            placeholder="Function" ng-model="company.users[user.id].function" />
         </div>        
       </div>
 
@@ -118,6 +118,7 @@
 
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="ok(company)">OK</button>
+    <p ng-if="!editCompany.$valid" class="text-warning">Please fill all required fields</p>
+    <button class="btn btn-primary" ng-disabled="!editCompany.$valid" ng-click="ok(company)">OK</button>
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
 </div>
