@@ -9,7 +9,7 @@
  */
 
 angular.module('adminPanelApp')
-  .controller('NewCompanyCtrl', function ($scope, $modalInstance, company) {
+  .controller('NewCompanyCtrl', function ($scope, $modalInstance, company, Modalconfirm) {
     $scope.company = angular.copy(company);
 
     $scope.addUser = function () {
@@ -18,7 +18,12 @@ angular.module('adminPanelApp')
     }
 
     $scope.removeUser = function (idx) {
-      $scope.company.users.splice(idx, 1);
+      var msg = "Are you really sure you want to remove " + $scope.company.users[idx].email + "?",
+          confirm = Modalconfirm.displayMessage(msg, "Warning", "md", true);
+      
+      confirm.result.then(function () {
+        $scope.company.users.splice(idx, 1);
+      });
     }
 
     $scope.ok = function () {

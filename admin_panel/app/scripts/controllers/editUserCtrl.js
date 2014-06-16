@@ -9,7 +9,7 @@
  */
 
 angular.module('adminPanelApp')
-  .controller('EditUserCtrl', function ($scope, $modalInstance, $modal, user, Modalconfirm) {
+  .controller('EditUserCtrl', function ($scope, $modalInstance, user, Modalconfirm) {
     $scope.user = user;
     $scope.resetPassword = function (user) {
       var msg = "Are you really sure you want to reset password for user " + user.email +"?",
