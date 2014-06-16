@@ -49,6 +49,6 @@
 </table>
 
 <div class="text-center">
-  <pagination total-items="users.length" items-per-page="itemsPerPage" 
+  <pagination total-items="(users|filter:userSearch).length" items-per-page="itemsPerPage" 
               ng-model="currentPage" ng-change="pageChanged()"></pagination>
 </div>

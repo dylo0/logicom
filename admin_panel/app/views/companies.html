@@ -57,6 +57,6 @@
 </table>
 
 <div class="text-center">
-  <pagination total-items="companies.length" items-per-page="itemsPerPage" 
+  <pagination total-items="(companies|filter:companySearch).length" items-per-page="itemsPerPage" 
               ng-model="currentPage" ng-change="pageChanged()"></pagination>
 </div>
