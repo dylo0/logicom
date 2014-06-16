@@ -9,7 +9,7 @@
  */
 angular.module('adminPanelApp')
   .controller('CompanyCtrl', function ($scope, $modal) {
-
+    $scope.itemsPerPage = 2;
     $scope.companies = [
       {
         name: "Logicom",
@@ -102,6 +102,10 @@ angular.module('adminPanelApp')
       //   });
 
       openModal(company);
+    }
+
+    $scope.setPaginationSize = function (size) {
+      $scope.itemsPerPage = size;
     }
 
   });

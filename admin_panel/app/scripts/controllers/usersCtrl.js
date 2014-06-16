@@ -9,7 +9,7 @@
  */
 angular.module('adminPanelApp')
   .controller('UsersCtrl', function ($scope, $modal) {
-
+    $scope.itemsPerPage = 2;
     $scope.users = [{
         logicomId: 1235123,
         name: "Tomasz",
@@ -19,6 +19,46 @@ angular.module('adminPanelApp')
         fax: "43 231 12312",
         function: "-",
         company: "logicom"
+      },
+      {
+        logicomId: 1235123,
+        name: "Lukasz",
+        surname: "Maciejewski",
+        email: "lukasz@mailinator.com",
+        phone: "32 543 15 21",
+        fax: "33 654 45 44",
+        function: "Spedytor",
+        company: "mailinator"
+      },
+      {
+        logicomId: 1235123,
+        name: "Patryk",
+        surname: "Stefanik",
+        email: "biuro@asd.com",
+        phone: "11 22 242 12 54",
+        fax: "11 23 423 23 12",
+        function: "Wlasciciel",
+        company: "asd"
+      },
+      {
+        logicomId: 1235123,
+        name: "Lukasz",
+        surname: "Maciejewski",
+        email: "lukasz@mailinator.com",
+        phone: "32 543 15 21",
+        fax: "33 654 45 44",
+        function: "Spedytor",
+        company: "mailinator"
+      },
+      {
+        logicomId: 1235123,
+        name: "Patryk",
+        surname: "Stefanik",
+        email: "biuro@asd.com",
+        phone: "11 22 242 12 54",
+        fax: "11 23 423 23 12",
+        function: "Wlasciciel",
+        company: "asd"
       },
       {
         logicomId: 1235123,
@@ -84,4 +124,8 @@ angular.module('adminPanelApp')
       openModal(user);
     }
 
+    $scope.setPaginationSize = function (size) {
+      $scope.itemsPerPage = size;
+    }
+    
   });
