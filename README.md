@@ -1,4 +1,4 @@
-logicom
+Logicom
 =======
 
 Transport exchange system.

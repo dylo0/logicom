@@ -140,7 +140,7 @@ angular.module('adminPanelApp')
     $scope.editCompany = function (company) {
       // To be implemented
       // gets userList for a company from server 
-      // $http.get('admin/companies/company.id').
+      // $http.get('admin/companies/company.id', {cache: true}).
       //   success(function (data) {
       //     company.users = data.users;
       //     openModal(company);
