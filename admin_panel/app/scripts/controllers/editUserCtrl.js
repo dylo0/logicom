@@ -9,13 +9,13 @@
  */
 
 angular.module('adminPanelApp')
-  .controller('EditUserCtrl', ['$scope', '$modalInstance', 'user', 'Modalconfirm',
-   function ($scope, $modalInstance, user, Modalconfirm) {
+  .controller('EditUserCtrl', ['$scope', '$modalInstance', 'user', 'Helpers',
+   function ($scope, $modalInstance, user, Helpers) {
     $scope.user = angular.copy(user);
     
     $scope.resetPassword = function (user) {
       var msg = "Are you really sure you want to reset password for user " + user.email +"?",
-          confirm = Modalconfirm.displayMessage(msg, "Warning", "md", true);
+          confirm = Helpers.displayMessage(msg, "Warning", "md", true);
       
       confirm.result.then(function () {
         // to be implemented
@@ -30,7 +30,7 @@ angular.module('adminPanelApp')
         //   })
         var msg = "Password reset instructions has been sent to " + user.email;
 
-        Modalconfirm.displayMessage(msg, "Notice", "md", false);
+        Helpers.displayMessage(msg, "Notice", "md", false);
       });
     }
 

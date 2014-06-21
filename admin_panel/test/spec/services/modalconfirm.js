@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: Modalconfirm', function () {
+describe('Service: Helpers', function () {
 
   // load the service's module
   beforeEach(module('adminPanelApp'));
 
   // instantiate service
-  var Modalconfirm;
-  beforeEach(inject(function (_Modalconfirm_) {
-    Modalconfirm = _Modalconfirm_;
+  var Helpers;
+  beforeEach(inject(function (_Helpers_) {
+    Helpers = _Helpers_;
   }));
 
   it('should do something', function () {
-    expect(!!Modalconfirm).toBe(true);
+    expect(!!Helpers).toBe(true);
   });
 
 });
