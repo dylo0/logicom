@@ -8,5 +8,5 @@
  * Controller of the adminPanelApp
  */
 angular.module('adminPanelApp')
-  .controller('StatsCtrl', function ($scope) {
-  });
+  .controller('StatsCtrl', ['$scope', function ($scope) {
+  }]);

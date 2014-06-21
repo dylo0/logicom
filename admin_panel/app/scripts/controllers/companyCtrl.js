@@ -8,7 +8,7 @@
  * Controller of the adminPanelApp
  */
 angular.module('adminPanelApp')
-  .controller('CompanyCtrl', function ($scope, $modal) {
+  .controller('CompanyCtrl', ['$scope', '$modal', function ($scope, $modal) {
     $scope.itemsPerPage = 2;
     $scope.companies = [
       {
@@ -156,4 +156,4 @@ angular.module('adminPanelApp')
       $scope.itemsPerPage = size;
     }
 
-  });
+  }]);

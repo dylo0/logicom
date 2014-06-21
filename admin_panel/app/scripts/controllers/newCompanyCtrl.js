@@ -9,7 +9,8 @@
  */
 
 angular.module('adminPanelApp')
-  .controller('NewCompanyCtrl', function ($scope, $modalInstance, company, Modalconfirm) {
+  .controller('NewCompanyCtrl', ['$scope', '$modalInstance', 'company', 'Modalconfirm',
+   function ($scope, $modalInstance, company, Modalconfirm) {
     $scope.company = angular.copy(company);
 
     $scope.addUser = function () {
@@ -34,4 +35,4 @@ angular.module('adminPanelApp')
       $modalInstance.dismiss('cancel');
     };
 
-  });
+  }]);

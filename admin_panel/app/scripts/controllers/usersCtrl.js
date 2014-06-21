@@ -8,7 +8,8 @@
  * Controller of the adminPanelApp
  */
 angular.module('adminPanelApp')
-  .controller('UsersCtrl', function ($scope, $modal) {
+  .controller('UsersCtrl', ['$scope', '$modal',
+   function ($scope, $modal) {
     $scope.itemsPerPage = 2;
     $scope.users = [{
         logicomId: 1235123,
@@ -128,4 +129,4 @@ angular.module('adminPanelApp')
       $scope.itemsPerPage = size;
     }
     
-  });
+  }]);

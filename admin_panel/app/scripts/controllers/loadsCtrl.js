@@ -8,5 +8,5 @@
  * Controller of the adminPanelApp
  */
 angular.module('adminPanelApp')
-  .controller('LoadCtrl', function ($scope) {
-  });
+  .controller('LoadCtrl', ['$scope', function ($scope) {
+  }]);

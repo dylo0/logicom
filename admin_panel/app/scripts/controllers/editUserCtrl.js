@@ -9,7 +9,8 @@
  */
 
 angular.module('adminPanelApp')
-  .controller('EditUserCtrl', function ($scope, $modalInstance, user, Modalconfirm) {
+  .controller('EditUserCtrl', ['$scope', '$modalInstance', 'user', 'Modalconfirm',
+   function ($scope, $modalInstance, user, Modalconfirm) {
     $scope.user = angular.copy(user);
     
     $scope.resetPassword = function (user) {
@@ -41,4 +42,4 @@ angular.module('adminPanelApp')
       $modalInstance.dismiss('cancel');
     };
 
-  });
+  }]);

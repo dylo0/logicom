@@ -8,7 +8,8 @@
  * Controller of the adminPanelApp
  */
 angular.module('adminPanelApp')
-  .controller('ModalCtrl', function ($scope, $modalInstance, $timeout, options) {
+  .controller('ModalCtrl', ['$scope', '$modalInstance', '$timeout', 'options',
+   function ($scope, $modalInstance, $timeout, options) {
     $scope.msg = options.message;
     $scope.title = options.title;
     $scope.cancelButton = (options.cancelButton !== 'undefined') ? options.cancelButton : true;
@@ -21,4 +22,4 @@ angular.module('adminPanelApp')
       $modalInstance.dismiss('cancel');
     };
 
-  });
+  }]);
