@@ -13,73 +13,73 @@ angular.module('adminPanelApp')
     $scope.itemsPerPage = 2;
     $scope.users = [{
         logicomId: 1235123,
-        name: "Tomasz",
-        surname: "Dyl",
-        email: "tomasz@mailinator.com",
-        phone: "32 124 12 123",
-        fax: "43 231 12312",
-        function: "-",
-        company: "logicom"
+        name: 'Tomasz',
+        surname: 'Dyl',
+        email: 'tomasz@mailinator.com',
+        phone: '32 124 12 123',
+        fax: '43 231 12312',
+        function: '-',
+        company: 'logicom'
       },
       {
         logicomId: 1235123,
-        name: "Lukasz",
-        surname: "Maciejewski",
-        email: "lukasz@mailinator.com",
-        phone: "32 543 15 21",
-        fax: "33 654 45 44",
-        function: "Spedytor",
-        company: "mailinator"
+        name: 'Lukasz',
+        surname: 'Maciejewski',
+        email: 'lukasz@mailinator.com',
+        phone: '32 543 15 21',
+        fax: '33 654 45 44',
+        function: 'Spedytor',
+        company: 'mailinator'
       },
       {
         logicomId: 1235123,
-        name: "Patryk",
-        surname: "Stefanik",
-        email: "biuro@asd.com",
-        phone: "11 22 242 12 54",
-        fax: "11 23 423 23 12",
-        function: "Wlasciciel",
-        company: "asd"
+        name: 'Patryk',
+        surname: 'Stefanik',
+        email: 'biuro@asd.com',
+        phone: '11 22 242 12 54',
+        fax: '11 23 423 23 12',
+        function: 'Wlasciciel',
+        company: 'asd'
       },
       {
         logicomId: 1235123,
-        name: "Lukasz",
-        surname: "Maciejewski",
-        email: "lukasz@mailinator.com",
-        phone: "32 543 15 21",
-        fax: "33 654 45 44",
-        function: "Spedytor",
-        company: "mailinator"
+        name: 'Lukasz',
+        surname: 'Maciejewski',
+        email: 'lukasz@mailinator.com',
+        phone: '32 543 15 21',
+        fax: '33 654 45 44',
+        function: 'Spedytor',
+        company: 'mailinator'
       },
       {
         logicomId: 1235123,
-        name: "Patryk",
-        surname: "Stefanik",
-        email: "biuro@asd.com",
-        phone: "11 22 242 12 54",
-        fax: "11 23 423 23 12",
-        function: "Wlasciciel",
-        company: "asd"
+        name: 'Patryk',
+        surname: 'Stefanik',
+        email: 'biuro@asd.com',
+        phone: '11 22 242 12 54',
+        fax: '11 23 423 23 12',
+        function: 'Wlasciciel',
+        company: 'asd'
       },
       {
         logicomId: 1235123,
-        name: "Lukasz",
-        surname: "Maciejewski",
-        email: "lukasz@mailinator.com",
-        phone: "32 543 15 21",
-        fax: "33 654 45 44",
-        function: "Spedytor",
-        company: "mailinator"
+        name: 'Lukasz',
+        surname: 'Maciejewski',
+        email: 'lukasz@mailinator.com',
+        phone: '32 543 15 21',
+        fax: '33 654 45 44',
+        function: 'Spedytor',
+        company: 'mailinator'
       },
       {
         logicomId: 1235123,
-        name: "Patryk",
-        surname: "Stefanik",
-        email: "biuro@asd.com",
-        phone: "11 22 242 12 54",
-        fax: "11 23 423 23 12",
-        function: "Wlasciciel",
-        company: "asd"
+        name: 'Patryk',
+        surname: 'Stefanik',
+        email: 'biuro@asd.com',
+        phone: '11 22 242 12 54',
+        fax: '11 23 423 23 12',
+        function: 'Wlasciciel',
+        company: 'asd'
       }
     ];
 
@@ -87,7 +87,7 @@ angular.module('adminPanelApp')
       var modalInstance = $modal.open({
         templateUrl: 'views/edit_user.html',
         controller: 'EditUserCtrl',
-        size: "lg",
+        size: 'lg',
         resolve: {
           user: function () {
             return user;
@@ -106,8 +106,8 @@ angular.module('adminPanelApp')
         //     // body...
         //   });
         $scope.companies.push(editedCompany);
-      })
-    }
+      });
+    };
 
     $scope.editUser = function (user) {
       console.log(user);
@@ -123,10 +123,10 @@ angular.module('adminPanelApp')
       //   });
 
       openModal(user);
-    }
+    };
 
     $scope.setPaginationSize = function (size) {
       $scope.itemsPerPage = size;
-    }
+    };
     
   }]);

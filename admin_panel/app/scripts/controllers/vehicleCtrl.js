@@ -9,4 +9,5 @@
  */
 angular.module('adminPanelApp')
   .controller('VehicleCtrl', function ($scope) {
+  	$scope.hi = 'hello';
   });

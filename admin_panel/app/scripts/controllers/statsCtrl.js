@@ -9,4 +9,5 @@
  */
 angular.module('adminPanelApp')
   .controller('StatsCtrl', ['$scope', function ($scope) {
+  	$scope.hi = 'hello';
   }]);

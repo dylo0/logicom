@@ -14,8 +14,8 @@ angular.module('adminPanelApp')
     $scope.user = angular.copy(user);
     
     $scope.resetPassword = function (user) {
-      var msg = "Are you really sure you want to reset password for user " + user.email +"?",
-          confirm = Helpers.displayMessage(msg, "Warning", "md", true);
+      var msg = 'Are you really sure you want to reset password for user ' + user.email +'?',
+          confirm = Helpers.displayMessage(msg, 'Warning', 'md', true);
       
       confirm.result.then(function () {
         // to be implemented
@@ -28,11 +28,11 @@ angular.module('adminPanelApp')
         //   error(function (data, status) {
         //     console.log(data);
         //   })
-        var msg = "Password reset instructions has been sent to " + user.email;
+        var msg = 'Password reset instructions has been sent to ' + user.email;
 
-        Helpers.displayMessage(msg, "Notice", "md", false);
+        Helpers.displayMessage(msg, 'Notice', 'md', false);
       });
-    }
+    };
 
     $scope.ok = function () {
       $modalInstance.close($scope.user);

@@ -10,9 +10,9 @@
 angular.module('adminPanelApp')
   .service('Helpers', ['$modal', function Helpers($modal){
     this.displayMessage = function (msg, title, size, cancelButton) {
-      var title = title || "info",
-          size = size || "md",
-          cancelBtn = (cancelButton !== "undefined") ? cancelButton : true;
+      title = title || 'info';
+      size = size || 'md';
+      cancelButton = (cancelButton !== 'undefined') ? cancelButton : true;
 
       var modalInstance = $modal.open({
         templateUrl: 'views/modal.html',
@@ -31,5 +31,5 @@ angular.module('adminPanelApp')
       });
 
       return modalInstance;
-    }
+    };
   }]);
