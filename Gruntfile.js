@@ -30,8 +30,14 @@ module.exports = function (grunt) {
         watch: {
             
             compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}',
+                        '<%= yeoman.app %>/../admin_panel/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass']
+            },
+
+           compassAdmin: {
+                files: ['<%= yeoman.app %>/../admin_panel/styles/{,*/}*.{scss,sass}'],
+                tasks: ['compassAdmin']
             },
             
             livereload: {
@@ -146,6 +152,36 @@ module.exports = function (grunt) {
                     debugInfo: true
                 }
             }
+        },
+
+
+        // Compass - admin panel
+        compassAdmin: {
+          options: {
+            sassDir: '<%= yeoman.app %>/../admin_panel/app/styles',
+            cssDir: '.tmp/styles',
+            generatedImagesDir: '.tmp/images/generated',
+            imagesDir: '<%= yeoman.app %>/../admin_panel/app/images',
+            javascriptsDir: '<%= yeoman.app %>/../admin_panel/app/scripts',
+            fontsDir: '<%= yeoman.app %>/../admin_panel/app/styles/fonts',
+            importPath: '<%= yeoman.app %>/../admin_panel/app/bower_components',
+            httpImagesPath: '/images',
+            httpGeneratedImagesPath: '/images/generated',
+            httpFontsPath: '/styles/fonts',
+            relativeAssets: false,
+            assetCacheBuster: false,
+            raw: 'Sass::Script::Number.precision = 10\n'
+          },
+          dist: {
+            options: {
+              generatedImagesDir: '<%= yeoman.dist %>/images/generated'
+            }
+          },
+          server: {
+            options: {
+              debugInfo: true
+            }
+          }
         },
         
 

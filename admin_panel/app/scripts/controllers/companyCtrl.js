@@ -52,7 +52,7 @@ angular.module('adminPanelApp')
 
     var openCompanyModal = function (company) {
       var modalInstance = $modal.open({
-        templateUrl: 'views/new_company.html',
+        templateUrl: 'admin/views/new_company.html',
         controller: 'NewCompanyCtrl',
         size: 'lg',
         resolve: {
@@ -112,7 +112,7 @@ angular.module('adminPanelApp')
       }];
 
       $modal.open({
-        templateUrl: 'views/show_users.html',
+        templateUrl: 'admin/views/show_users.html',
         controller: 'ShowusersCtrl',
         size: 'lg',
         resolve: {

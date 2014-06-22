@@ -85,7 +85,7 @@ angular.module('adminPanelApp')
 
     var openModal = function (user) {
       var modalInstance = $modal.open({
-        templateUrl: 'views/edit_user.html',
+        templateUrl: 'admin/views/edit_user.html',
         controller: 'EditUserCtrl',
         size: 'lg',
         resolve: {

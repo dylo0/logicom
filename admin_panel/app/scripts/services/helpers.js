@@ -15,7 +15,7 @@ angular.module('adminPanelApp')
       cancelButton = (cancelButton !== 'undefined') ? cancelButton : true;
 
       var modalInstance = $modal.open({
-        templateUrl: 'views/modal.html',
+        templateUrl: 'admin/views/modal.html',
         controller: 'ModalCtrl',
         size: size,
         resolve: {

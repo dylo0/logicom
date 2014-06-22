@@ -25,42 +25,42 @@ angular
       $stateProvider
         .state('/', {
           url: '/',
-          templateUrl: 'views/main.html',
+          templateUrl: 'admin/views/main.html',
           controller: 'MainCtrl'
         })
         .state('/companies', {
           url: '/companies',
-          templateUrl: 'views/companies.html',
+          templateUrl: 'admin/views/companies.html',
           controller: 'CompanyCtrl'
         })
         .state('/users', {
           url: '/users',
-          templateUrl: 'views/users.html',
+          templateUrl: 'admin/views/users.html',
           controller: 'UsersCtrl'
         })
         .state('/loads', {
           url: '/loads',
-          templateUrl: 'views/loads.html',
+          templateUrl: 'admin/views/loads.html',
           controller: 'LoadCtrl'
         })
         .state('/vehicles', {
           url: '/vehicles',
-          templateUrl: 'views/vehicles.html',
+          templateUrl: 'admin/views/vehicles.html',
           controller: 'VehicleCtrl'
         })
         .state('/boards', {
           url: '/boards',
-          templateUrl: 'views/boards.html',
+          templateUrl: 'admin/views/boards.html',
           controller: 'BoardCtrl'
         })
         .state('/stats', {
           url: '/stats',
-          templateUrl: 'views/stats.html',
+          templateUrl: 'admin/views/stats.html',
           controller: 'VehicleCtrl'
         })
         .state('/about', {
           url: '/about',
-          templateUrl: 'views/about.html',
+          templateUrl: 'admin/views/about.html',
           controller: 'AboutCtrl'
         });
     }]);

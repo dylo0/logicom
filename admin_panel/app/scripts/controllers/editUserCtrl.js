@@ -9,8 +9,8 @@
  */
 
 angular.module('adminPanelApp')
-  .controller('EditUserCtrl', ['$scope', '$modalInstance', 'user', 'Helpers',
-   function ($scope, $modalInstance, user, Helpers) {
+  .controller('EditUserCtrl', ['$scope', '$modalInstance', 'user', 'Helpers', '$http',
+   function ($scope, $modalInstance, user, Helpers, $http) {
     $scope.user = angular.copy(user);
     
     $scope.resetPassword = function (user) {
@@ -18,19 +18,18 @@ angular.module('adminPanelApp')
           confirm = Helpers.displayMessage(msg, 'Warning', 'md', true);
       
       confirm.result.then(function () {
-        // to be implemented
-        // var uid = user.logicomId;
-        // $http.post('admin/password_reset/' + uid).
-        //   success(function (data, status) {
-        //     console.log('password recovery request sent');
-        //     // add flash message notice here
-        //   }).
-        //   error(function (data, status) {
-        //     console.log(data);
-        //   })
-        var msg = 'Password reset instructions has been sent to ' + user.email;
+        $http.post('admin/password_reset/', {id:user.logicomId}).
+          success(function (data, status) {
+            // change user.email into data.user.email after implementing in backend
+            msg = 'Password reset instructions has been sent to ' + user.email;
+            Helpers.displayMessage(msg, 'Notice', 'md', false);
+          }).
+          error(function (data, status) {
+            console.log(data);
+            msg = 'Error: ' + data;
+            Helpers.displayMessage(msg, 'Notice', 'md', false);
+          })
 
-        Helpers.displayMessage(msg, 'Notice', 'md', false);
       });
     };
 

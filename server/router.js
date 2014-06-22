@@ -22,7 +22,7 @@ module.exports = function (app, passport) {
 	});
 
 	app.get('/admin', isAdmin, function (req, res) {
-		res.render('adminPanel.ejs');
+		res.sendfile( path.join( __dirname, '../admin_panel/app/index.html' ) );
 	})
 }
 
@@ -35,7 +35,7 @@ function isLoggedIn (req, res, next) {
 
 // to be implemented...
 function isAdmin (req, res, next) {
-	if (req.isAuthenticated() && true) 
+	// if (req.isAuthenticated() && true) 
 		return next();
 
 	res.redirect('/');

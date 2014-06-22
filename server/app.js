@@ -52,6 +52,7 @@ db.once('open', function callback () {
 
 	// mount static
 	app.use(express.static( path.join( __dirname, '../app') ));
+	app.use('/admin', express.static( path.join( __dirname, '../admin_panel/app') ));
 	app.use(express.static( path.join( __dirname, '../.tmp') ));
 
 	// reqired for passport 
