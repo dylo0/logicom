@@ -16,7 +16,7 @@ var smtpTransport = nodemailer.createTransport("SMPT",{
     }
 });
 
-exports = {
+module.exports = {
 	sendEmail: function (receiver, title, message, htmlContent) {
 		// receiver accepts string based list i.e.
 		// "bar@blurdybloop.com, baz@blurdybloop.com"

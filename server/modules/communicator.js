@@ -1,5 +1,9 @@
 'use strict';
 
+// 
+// SocketIo communication logic
+// 
+
 var express = require('express'),
 	MemoryStore = express.session.MemoryStore,
 	socketIO = require('socket.io');

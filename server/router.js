@@ -1,33 +1,28 @@
-var path = require('path');
+'use strict';
 
-module.exports = function (app, passport) {
+module.exports = function (app, api) {
 	
-	app.get('/', function (req, res) {
-		res.render('index.ejs', { message: req.flash('loginMessage') })
-	});
+	app.get('/', api.getIndex);
 
-	app.get('/application', isLoggedIn, function (req, res) {
-		res.sendfile( path.join( __dirname, '../app/app.html' ) );
-	});
+	app.get('/application', isLoggedIn, api.getClientApp);
 		
-	app.post('/login', passport.authenticate('local-login', {
-		successRedirect : '/application',
-		failureRedirect : '/',
-		failureFlash : true
-	}));
+	app.post('/login', api.login);
 
-	app.get('/logout', function (req, res) {
-		req.logout();
-		res.redirect('/');
-	});
+	app.get('/logout', api.logout);
 
-	app.get('/admin', isAdmin, function (req, res) {
-		res.sendfile( path.join( __dirname, '../admin_panel/app/index.html' ) );
-	})
+	app.get('/admin', isAdmin, api.getAdminPanel);
+
+	app.post('admin/password_reset/ ', api.passwordRecovery);
+
+	// other routes get 404
+	app.get('/*',function(req, res) {
+      res.send(404);
+  	});
 }
 
+// to be implemented...
 function isLoggedIn (req, res, next) {
-	if (req.isAuthenticated())
+	// if (req.isAuthenticated())
 		return next();
 
 	res.redirect('/');

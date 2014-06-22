@@ -65,7 +65,8 @@ db.once('open', function callback () {
 
 	require('./config/passport')(passport); // pass passport for configuration
 
-	require('./router')(app, passport);
+	var api = require('./modules/api')(passport)
+	var router = require('./router')(app, api);
 
 	// start server
 	var server =http.createServer(app)
