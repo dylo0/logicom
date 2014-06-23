@@ -1,45 +1,12 @@
 'use strict';
 
-var express = require('express'),
-	http = require('http'),
-	path = require('path'),
-	async = require('async'),
-	hbs = require('express-hbs'),
-	flash    = require('connect-flash'),
-	baucis = require('baucis'),
-	mongoose = require('mongoose'),
-	router = require('./router'),
-	communicator = require('./modules/communicator'),
-	passport = require('passport'),
-	session = require('express-session');
-
-
-// start mongoose
-mongoose.connect('mongodb://localhost/sit');
-var db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-
-	/* test schema */
-    var testSchema = new mongoose.Schema({
-        test: String
-    });
-
-    var Test = mongoose.model( 'test', testSchema );
-
-    /* set Baucis */
-    baucis.rest({
-        singular: 'test'
-    });
-
+module.exports = function (express, config, path, session, flash) {
 	var app = express();
 
 	app.configure(function(){
-	    app.set('port', 9000);
+	    app.set('port', config.port);
 		app.set('views', __dirname + '/views');
 	    app.set('view engine', 'ejs');
-	    // app.set('views', __dirname + '../app/scripts/views');
 	});
 
     // app.use('/api/v1', baucis());
@@ -57,28 +24,9 @@ db.once('open', function callback () {
 
 	// reqired for passport 
 	app.use( express.cookieParser() );
-	app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
-	app.use(passport.initialize());
-	app.use(passport.session()); // persistent login sessions
+	app.use(session({ secret: config.sessionSecret })); // session secret
+
 	app.use(flash()); // use connect-flash for flash messages stored in session
 
-
-	require('./config/passport')(passport); // pass passport for configuration
-
-	var api = require('./modules/api')(passport)
-	var router = require('./router')(app, api);
-
-	// start server
-	var server =http.createServer(app)
-
-	
-	// bind websockets logic
-	communicator.createSocket(server);
-
-	server.listen(app.get('port'), function(){
-	    console.log('Express App started!');
-	});
-
-});
-
-
+	return app;
+}

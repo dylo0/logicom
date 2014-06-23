@@ -92,17 +92,17 @@ module.exports = function (grunt) {
             },
             dev: {
                 options: {
-                    script: 'server/app.js'
+                    script: 'server/server.js'
                 }
             },
             prod: {
                 options: {
-                    script: 'server/app.js'
+                    script: 'server/server.js'
                 }
             },
             test: {
                 options: {
-                    script: 'server/app.js'
+                    script: 'server/server.js'
                 }
             }
         },

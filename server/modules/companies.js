@@ -4,12 +4,12 @@
 // Module for handling user and companies functions
 // 
 
-require('./mailer');
-
-module.exports = {
-	passwordRecovery: function (req, res) {
-		console.log(req.body)
-		// TODO
-		// find user in db, add param 'requested new password' to db
-	}
-}
+module.exports = function (mailer) {
+	return {
+		passwordRecovery: function (req, res) {
+			console.log(req.body)
+			// TODO
+			// find user in db, add param 'requested new password' to db
+		}
+	};
+};

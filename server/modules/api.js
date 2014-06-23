@@ -1,7 +1,6 @@
-var path = require('path'),
-	companies = require('./companies');
+'user strict';
 
-module.exports = function (passport) {
+module.exports = function (passport, path, companies) {
 	return {
 		getIndex:  function (req, res) {
 			res.render('index.ejs', { message: req.flash('loginMessage') })
@@ -23,7 +22,8 @@ module.exports = function (passport) {
 		},
 
 		getAdminPanel: function (req, res) {
-			res.sendfile( path.join( __dirname, '../admin_panel/app/index.html' ) );
+			console.log('asdasadasd');
+			res.sendfile( path.join( __dirname, '../../admin_panel/app/index.html' ) );
 		},
 
 		passwordRecovery: function (req, res) {
