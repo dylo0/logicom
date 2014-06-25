@@ -9,11 +9,19 @@ var express = require('express'),
     baucis = require('baucis'),
     mongoose = require('mongoose'),
     router = require('./router'),
-    session = require('express-session');
+    session = require('express-session'),
+    logicomConfig = require('./config/logicomConfig');
 
 
 // start mongoose
-mongoose.connect('mongodb://localhost/sit');
+
+var connectionOptions = {
+    user: logicomConfig.dbUser,
+    pass: logicomConfig.dbPass
+};
+
+mongoose.connect(logicomConfig.databaseURI, connectionOptions);
+
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -35,8 +43,6 @@ db.once('open', function callback () {
     //////////////////////
     // APPLICATION MODULES
     //////////////////////
-       
-    var logicomConfig = require('./config/logicomConfig');
     
     var app = require('./app')(express, logicomConfig, path, session, flash);
 
