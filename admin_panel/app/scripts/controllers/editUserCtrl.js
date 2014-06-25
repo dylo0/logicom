@@ -25,7 +25,6 @@ angular.module('adminPanelApp')
             Helpers.displayMessage(msg, 'Notice', 'md', false);
           }).
           error(function (data, status) {
-            console.log(data);
             msg = 'Error: ' + data;
             Helpers.displayMessage(msg, 'Notice', 'md', false);
           })

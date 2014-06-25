@@ -22,7 +22,6 @@ module.exports = function (passport, path, companies) {
 		},
 
 		getAdminPanel: function (req, res) {
-			console.log('asdasadasd');
 			res.sendfile( path.join( __dirname, '../../admin_panel/app/index.html' ) );
 		},
 
