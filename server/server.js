@@ -48,8 +48,8 @@ db.once('open', function callback () {
 
     // user and encryption
     var bcrypt   = require('bcrypt-nodejs'),
-        user     = require('./models/user')(mongoose, bcrypt),
-        passport = require('./config/passport')(app, user);
+        userModel     = require('./models/user')(mongoose, bcrypt),
+        passport = require('./config/passport')(app, userModel);
 
     // webscockets communication module
     var socketIO = require('socket.io'),
@@ -60,7 +60,8 @@ db.once('open', function callback () {
         mailer      = require('./modules/mailer')(nodemailer, logicomConfig);
 
     // companies logic module
-    var companies = require('./modules/companies')(mailer);
+    var companyModel  = require('./models/company')(mongoose, userModel),
+        companies = require('./modules/companies')(mailer, companyModel);
 
 
     // router and it's api

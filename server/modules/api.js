@@ -22,12 +22,27 @@ module.exports = function (passport, path, companies) {
 		},
 
 		getAdminPanel: function (req, res) {
-			console.log('asdasadasd');
 			res.sendfile( path.join( __dirname, '../../admin_panel/app/index.html' ) );
 		},
 
 		passwordRecovery: function (req, res) {
+			// todo change req res logic here
 			companies.passwordRecovery(req, res);
 		},
+
+		// for admin panel only
+		getAllUsers: function (req, res) {
+			companies.getAllUsers(function (userlist) {
+				// body...
+			});
+		},
+
+		getUserInfo: function (req, res) {
+			companies.getUser(req, res)
+		},
+
+		getContactList: function (req, res) {
+			// get contactlist for requesting user;
+		}
 	}
 }

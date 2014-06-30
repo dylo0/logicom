@@ -4,7 +4,7 @@
 // Module for handling user and companies functions
 // 
 
-module.exports = function (mailer) {
+module.exports = function (mailer, companyModel) {
 	return {
 		passwordRecovery: function (req, res) {
 			console.log(req.body)
