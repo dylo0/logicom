@@ -13,7 +13,7 @@ angular.module('adminPanelApp')
     $scope.companies = [
       {
         name: 'Logicom',
-        logicomId: '12312312312',
+        _id: '12312312312',
         adress: 'Rybnicka 32A/2',
         zip: '44-200',
         city: 'Gliwice',
@@ -22,10 +22,20 @@ angular.module('adminPanelApp')
         fax: '32 123 457',
         email: 'biuro@logicom.pl',
         www: 'www.logicom.pl',
-        users: [{}]
+        users: [{
+          logicomId: 1235123,
+          name: 'Tomasz',
+          surname: 'Dyl',
+          email: 'tomasz@mailinator.com',
+          phone: '32 124 12 123',
+          fax: '43 231 12312',
+          func: '-',
+          company: 'logicom'
+        }]
       },
       {
         name: 'Inna firma',
+        _id: '12312312314',
         adress: 'wodzislawska 15',
         zip: '41-300',
         city: 'Rybnik',
@@ -38,6 +48,7 @@ angular.module('adminPanelApp')
       },
       {
         name: 'eurotrans',
+        _id: '12312312362',
         adress: 'Lokietka 2',
         zip: '44-223',
         city: 'Poznan',
@@ -63,18 +74,16 @@ angular.module('adminPanelApp')
       });
 
       modalInstance.result.then(function (editedCompany) {
-        console.log(editedCompany);
-        // post edited company, get it with assigned id, and push to scope companies
-        // $http.post('admin/companies', editedCompany).
-        //   success(function (data) {
-        //     
-        //   }).
-        //   error(function (data) {
-        //     // body...
-        //   });
+        $http.post('admin/companies', editedCompany).
+        success(function (data) {
+          $scope.companies.push(data);
+        }).
+        error(function (data) {
+          console.log(data);
+        });
 
         // TODO add searching for company already in scope - for edit
-        $scope.companies.push(editedCompany);
+        // $scope.companies.push(editedCompany);
       });
     };
 
@@ -87,7 +96,7 @@ angular.module('adminPanelApp')
         email: 'tomasz@mailinator.com',
         phone: '32 124 12 123',
         fax: '43 231 12312',
-        function: '-',
+        func: '-',
         company: 'logicom'
       },
       {
@@ -97,7 +106,7 @@ angular.module('adminPanelApp')
         email: 'lukasz@mailinator.com',
         phone: '32 543 15 21',
         fax: '33 654 45 44',
-        function: 'Spedytor',
+        func: 'Spedytor',
         company: 'mailinator'
       },
       {
@@ -107,7 +116,7 @@ angular.module('adminPanelApp')
         email: 'biuro@asd.com',
         phone: '11 22 242 12 54',
         fax: '11 23 423 23 12',
-        function: 'Wlasciciel',
+        func: 'Wlasciciel',
         company: 'asd'
       }];
 
