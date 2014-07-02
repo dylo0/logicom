@@ -8,8 +8,19 @@
  * Controller of the adminPanelApp
  */
 angular.module('adminPanelApp')
-  .controller('CompanyCtrl', ['$scope', '$modal', function ($scope, $modal) {
+  .controller('CompanyCtrl', ['$scope', '$modal', '$http', 'Helpers', function ($scope, $modal, $http, Helpers) {
     $scope.itemsPerPage = 2;
+
+    $http.get('admin/companyList').
+      success(function (data, status) {
+        console.log(data, status)
+      }).
+      error(function (data, status) {
+        var msg = "error: " + data;
+        Helpers.displayMessage(msg, 'Cannot get company list', 'md', false);
+      })
+
+      // change logicomid into _id;
     $scope.companies = [
       {
         name: 'Logicom',

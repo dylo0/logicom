@@ -17,4 +17,3 @@ module.exports = function (mongoose, userSchema) {
 
   return mongoose.model('Company', companySchema);
 }
-
