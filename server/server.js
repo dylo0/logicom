@@ -27,18 +27,6 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
 
-    /* test schema */
-    var testSchema = new mongoose.Schema({
-        test: String
-    });
-
-    var Test = mongoose.model( 'test', testSchema );
-
-    /* set Baucis */
-    baucis.rest({
-        singular: 'test'
-    });
-
 
     //////////////////////
     // APPLICATION MODULES

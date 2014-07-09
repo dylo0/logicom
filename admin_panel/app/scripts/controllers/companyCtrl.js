@@ -85,7 +85,8 @@ angular.module('adminPanelApp')
       });
 
       modalInstance.result.then(function (editedCompany) {
-        $http.post('admin/companies', editedCompany).
+        console.log(editedCompany);
+        $http.post('admin/updateCompany', editedCompany).
         success(function (data) {
           $scope.companies.push(data);
         }).

@@ -7,10 +7,9 @@
 module.exports = function (mailer, companyModel) {
 	return {
 		// lists all companies and it's users
-		getCompanies: function (req, res) {
-			return companyModel.find(function (err, companies) {
-		      if (err) return res.send(err);
-		      return res.json(companies);
+		getAll: function (cb, onError) {
+			companyModel.find(function (err, companies) {
+				console.log(companies);
 		    });
 		},
 
@@ -20,8 +19,19 @@ module.exports = function (mailer, companyModel) {
 		},
 
 		// add company to db, for each user sends new user request
-		addCompany: function (data) {
-			
+		addNew: function (data, cb, onError) {
+			data.users.forEach(function (user) {
+				requestNewUser(user);
+			});
+
+			var company = new companyModel(data);
+			company.save(function (err) {
+				if (err) { 
+					onError(err);
+				} else {
+					cb();
+				}
+			});
 		},
 
 		// Updates company model
@@ -33,7 +43,7 @@ module.exports = function (mailer, companyModel) {
 
 		// generate password uri, and send it to his email
 		requestNewUser: function (data) {
-			// body...
+			console.log(data);
 		},
 
 		// executed after email confirmation and creation of password

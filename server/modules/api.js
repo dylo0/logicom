@@ -37,6 +37,22 @@ module.exports = function (passport, path, companies) {
 			});
 		},
 
+		getAllCompanies: function (req, res) {
+			companies.getAll(function (companies) {
+				console.log(companies);
+			});
+		},
+
+		updateCompany:function (req, res) {
+			console.log('request', req.body);
+
+			if (req.body._id === 'undefined') {
+				companies.addNew(req.body);
+			} else {
+				companies.updateCompany(req.body);
+			}
+		},
+
 		getUserInfo: function (req, res) {
 			companies.getUser(req, res)
 		},

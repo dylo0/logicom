@@ -14,6 +14,10 @@ module.exports = function (app, api) {
 
 	app.post('admin/password_reset/ ', api.passwordRecovery);
 
+	app.get('/admin/companyList', api.getAllCompanies);
+
+	app.post('/admin/updateCompany', api.updateCompany);
+
 	// other routes get 404
 	app.get('/*',function(req, res) {
       res.send(404);
