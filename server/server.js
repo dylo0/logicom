@@ -6,6 +6,7 @@ var express = require('express'),
     async = require('async'),
     hbs = require('express-hbs'),
     cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     router = require('./router'),
     session = require('express-session'),
@@ -32,7 +33,7 @@ db.once('open', function callback () {
     // APPLICATION MODULES
     //////////////////////
     
-    var app = require('./app')(express, logicomConfig, path, session, cookieParser, redisStore);
+    var app = require('./app')(express, logicomConfig, path, session, cookieParser, bodyParser, redisStore);
 
     // user and encryption
     var bcrypt   = require('bcrypt-nodejs'),

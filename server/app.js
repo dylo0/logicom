@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (express, config, path, session, cookieParser, redisStore) {
+module.exports = function (express, config, path, session, cookieParser, bodyParser, redisStore) {
 	var app = express();
 
     app.set('port', config.port);
@@ -23,6 +23,10 @@ module.exports = function (express, config, path, session, cookieParser, redisSt
 
 	// reqired for passport 
 	app.use( cookieParser() );
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({
+	  extended: true
+	}));
 	app.use(session({ store: new redisStore(), secret: config.sessionSecret })); // session secret
 
 	return app;
