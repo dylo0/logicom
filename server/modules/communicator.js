@@ -5,9 +5,7 @@
 // 
 
 module.exports = function (express, socketIO) {
-    var MemoryStore = express.session.MemoryStore,
-        sessionStore = new MemoryStore(),
-        io;
+    var io;
 
     // id's present only for future app logic
     var users = {};

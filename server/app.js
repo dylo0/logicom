@@ -1,13 +1,12 @@
 'use strict';
 
-module.exports = function (express, config, path, session, flash) {
+module.exports = function (express, config, path, session, cookieParser, redisStore) {
 	var app = express();
 
-	app.configure(function(){
-	    app.set('port', config.port);
-		app.set('views', __dirname + '/views');
-	    app.set('view engine', 'ejs');
-	});
+    app.set('port', config.port);
+	app.set('views', __dirname + '/views');
+    app.set('view engine', 'ejs');
+
 
     // app.use('/api/v1', baucis());
 
@@ -23,10 +22,8 @@ module.exports = function (express, config, path, session, flash) {
 	app.use(express.static( path.join( __dirname, '../.tmp') ));
 
 	// reqired for passport 
-	app.use( express.cookieParser() );
-	app.use(session({ secret: config.sessionSecret })); // session secret
-
-	app.use(flash()); // use connect-flash for flash messages stored in session
+	app.use( cookieParser() );
+	app.use(session({ store: new redisStore(), secret: config.sessionSecret })); // session secret
 
 	return app;
 }

@@ -8,8 +8,15 @@ module.exports = function (mailer, companyModel) {
 	return {
 		// lists all companies and it's users
 		getAll: function (cb, onError) {
+			console.log('getall');
 			companyModel.find(function (err, companies) {
+				console.log('got companies');
 				console.log(companies);
+				if (err) {
+					onError(err);
+				} else {
+					cb(companies);
+				}
 		    });
 		},
 
@@ -20,6 +27,7 @@ module.exports = function (mailer, companyModel) {
 
 		// add company to db, for each user sends new user request
 		addNew: function (data, cb, onError) {
+			console.log(data);
 			data.users.forEach(function (user) {
 				requestNewUser(user);
 			});

@@ -5,11 +5,11 @@ var express = require('express'),
     path = require('path'),
     async = require('async'),
     hbs = require('express-hbs'),
-    flash    = require('connect-flash'),
-    baucis = require('baucis'),
+    cookieParser = require('cookie-parser'),
     mongoose = require('mongoose'),
     router = require('./router'),
     session = require('express-session'),
+    redisStore = require('connect-redis')(session),
     logicomConfig = require('./config/logicomConfig');
 
 
@@ -32,7 +32,7 @@ db.once('open', function callback () {
     // APPLICATION MODULES
     //////////////////////
     
-    var app = require('./app')(express, logicomConfig, path, session, flash);
+    var app = require('./app')(express, logicomConfig, path, session, cookieParser, redisStore);
 
     // user and encryption
     var bcrypt   = require('bcrypt-nodejs'),
@@ -54,7 +54,7 @@ db.once('open', function callback () {
 
     // router and it's api
     var api = require('./modules/api')(passport, path, companies),
-        router = require('./router')(app, api);
+        router = require('./router')(app, express, api);
 
     //////////////////////
 

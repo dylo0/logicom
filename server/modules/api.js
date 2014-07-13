@@ -3,7 +3,7 @@
 module.exports = function (passport, path, companies) {
 	return {
 		getIndex:  function (req, res) {
-			res.render('index.ejs', { message: req.flash('loginMessage') })
+			res.render('index.ejs')
 		},
 
 		getClientApp: function (req, res) {
