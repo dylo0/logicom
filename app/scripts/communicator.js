@@ -1,4 +1,4 @@
-define(['app', 'socketio'], function(AppManager){
+define(['app', 'socketio'], function(AppManager, io){
 	//communication between websockets and application
 	
 	socket = io.connect();

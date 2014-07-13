@@ -44,7 +44,7 @@ require.config({
         ionsound: 'vendor/ion.sound.min',
 
         //alias for socket.io
-        socketio: 'vendor/socket.io.min',
+        socketio: '//cdn.socket.io/socket.io-1.0.6',
         
         /* alias the bootstrap js lib */
         bootstrap: 'vendor/bootstrap',
