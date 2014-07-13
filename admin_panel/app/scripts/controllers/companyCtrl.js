@@ -11,7 +11,7 @@ angular.module('adminPanelApp')
   .controller('CompanyCtrl', ['$scope', '$modal', '$http', 'Helpers', function ($scope, $modal, $http, Helpers) {
     $scope.itemsPerPage = 2;
 
-    $http.get('admin/companyList').
+    $http.get('companyList').
       success(function (data, status) {
         console.log(data, status)
       }).
@@ -74,7 +74,7 @@ angular.module('adminPanelApp')
 
     var openCompanyModal = function (company) {
       var modalInstance = $modal.open({
-        templateUrl: 'admin/views/new_company.html',
+        templateUrl: 'views/new_company.html',
         controller: 'NewCompanyCtrl',
         size: 'lg',
         resolve: {
@@ -86,7 +86,7 @@ angular.module('adminPanelApp')
 
       modalInstance.result.then(function (editedCompany) {
         console.log(editedCompany);
-        $http.post('admin/updateCompany', editedCompany).
+        $http.post('updateCompany', editedCompany).
         success(function (data) {
           $scope.companies.push(data);
         }).
