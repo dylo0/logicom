@@ -18,7 +18,7 @@ angular.module('adminPanelApp')
           confirm = Helpers.displayMessage(msg, 'Warning', 'md', true);
       
       confirm.result.then(function () {
-        $http.post('admin/password_reset/', {id:user.logicomId}).
+        $http.post('password_reset/', {id:user.logicomId}).
           success(function (data, status) {
             // change user.email into data.user.email after implementing in backend
             msg = 'Password reset instructions has been sent to ' + user.email;
@@ -27,8 +27,7 @@ angular.module('adminPanelApp')
           error(function (data, status) {
             msg = 'Error: ' + data;
             Helpers.displayMessage(msg, 'Notice', 'md', false);
-          })
-
+          });
       });
     };
 

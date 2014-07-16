@@ -26,5 +26,5 @@ module.exports = function (mongoose, bcrypt) {
     return bcrypt.compareSync(password, this.local.password);
   };
 
-  return mongoose.model('User', userSchema);
+  return userSchema;
 }

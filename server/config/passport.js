@@ -2,13 +2,10 @@
 var LocalStrategy   = require('passport-local').Strategy,
     passport        = require('passport');
 
-// load up the user model
-var User       = require('../models/user');
-
 // load the auth variables
 // var configAuth = require('./auth'); // use this one for testing
 
-module.exports = function(app, user) {
+module.exports = function(app, User) {
 
     // =========================================================================
     // passport session setup ==================================================
@@ -17,7 +14,7 @@ module.exports = function(app, user) {
     // passport needs ability to serialize and unserialize users out of session
 
     // used to serialize the user for the session
-    passport.serializeUser(function(user, done) {
+    passport.serializeUser(function(User, done) {
         done(null, user.id);
     });
 

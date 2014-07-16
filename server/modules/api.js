@@ -30,31 +30,57 @@ module.exports = function (passport, path, companies) {
 			companies.passwordRecovery(req, res);
 		},
 
-		// for admin panel only
-		getAllUsers: function (req, res) {
+		// for admin panel only, lists all users
+		listAllUsers: function (req, res) {
 			companies.getAllUsers(function (userlist) {
-				// body...
+				res.json(userlist);
+			}, function (err) {
+				res.send(err);
 			});
+		},
+
+		listCompanyUsers: function (req, res) {
+			onSuccess = function (data) {
+				res.send(data);
+			};
+
+			onError = function (err) {
+				res.send(500, err);
+			};
+
+			companies.listCompanyUsers(req.params.id, onSuccess, onError);
 		},
 
 		getAllCompanies: function (req, res) {
 			companies.getAll(function (companies) {
-				console.log(companies);
+				res.json(companies);
+			}, function (err) {
+				res.send(err);
 			});
 		},
 
 		updateCompany:function (req, res) {
-			console.log('request', req.body);
+			var onError = function (err) {
+				res.send(500, err);
+			};
 
-			if (req.body._id === 'undefined') {
-				companies.addNew(req.body);
+			var onSuccess = function (data) {
+				res.send(data);
+			};
+
+			if (req.body._id === undefined) {
+				companies.addNew(req.body, onSuccess, onError);
 			} else {
-				companies.updateCompany(req.body);
+				companies.updateCompany(req.body, onSuccess, onError);
 			}
 		},
 
 		getUserInfo: function (req, res) {
-			companies.getUser(req, res)
+			companies.getUser(req.body._id, function (user) {
+				res.send(user);
+			}, function (err) {
+				res.send(500, err);
+			})
 		},
 
 		getContactList: function (req, res) {

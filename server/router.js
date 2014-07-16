@@ -13,11 +13,15 @@ module.exports = function (app, express, api) {
 
 	expressRouter.get('/admin', isAdmin, api.getAdminPanel);
 
-	expressRouter.post('admin/password_reset/ ', api.passwordRecovery);
+	expressRouter.post('admin/password_reset', api.passwordRecovery);
 
 	expressRouter.get('/admin/companyList', api.getAllCompanies);
 
 	expressRouter.post('/admin/updateCompany', api.updateCompany);
+
+	expressRouter.get('/admin/listAllUsers', api.listAllUsers);
+
+	expressRouter.get('/admin/listCompanyUsers/:id', api.listCompanyUsers);
 
 	// other routes get 404
 	expressRouter.get('/*',function(req, res) {

@@ -16,7 +16,6 @@ module.exports = function (express, socketIO) {
         createSocket: function (app) {
             io = socketIO.listen(app);
             io.sockets.on('connection', function(socket) {
-        
                 socket.on('new:user', function (username, callback) {
                     if (username in users) {
                         callback({error: {type: "user:exists"}});

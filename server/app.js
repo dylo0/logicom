@@ -7,9 +7,6 @@ module.exports = function (express, config, path, session, cookieParser, bodyPar
 	app.set('views', __dirname + '/views');
     app.set('view engine', 'ejs');
 
-
-    // app.use('/api/v1', baucis());
-
 	// simple log
 	app.use(function(req, res, next){
 	  console.log('%s %s', req.method, req.url);
