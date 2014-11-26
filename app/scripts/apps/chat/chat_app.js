@@ -4,6 +4,7 @@ define(["app", "apps/chat/list/list_controller"], function(AppManager, Controlle
 
         var API = {
             listMessages: function () {
+                console.log('starting chat module');
                 ChatApp.List.Controller.listMessages();
             }
         };

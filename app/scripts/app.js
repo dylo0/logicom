@@ -35,8 +35,8 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
             //     { name: "Kontakty", url: "allcontacts", navigationTrigger: "show:module:allrcontacts" },
             //     { name: "Archiwum", url: "archive", navigationTrigger: "show:module:archive" }
 
-    AppManager.commands.setHandler('start:subapplication', function (appname, args) {
-        AppManager.startSubApp(appName, args)
+    AppManager.commands.setHandler('show:module', function (moduleName, args) {
+        AppManager.startModule(moduleName, args);
     });
 
     AppManager.startApplication = function () {
@@ -44,22 +44,24 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
         AppManager.module("HeaderApp").start();
         AppManager.module("ConversationsApp").start();
         AppManager.module("ContactsApp").start();
-        AppManager.startSubApp("ChatApp");
+        
+        AppManager.startModule("ChatApp");   
     };
 
-    AppManager.startSubApp = function(appName, args){
-        var currentApp = appName ? AppManager.module(appName) : null;
+    AppManager.startModule = function(moduleName, args){
+        var currentApp = moduleName ? AppManager.module(moduleName) : null;
         if (AppManager.currentApp === currentApp){ return; }
-
+        
         if (AppManager.currentApp){
+            console.log('stopping module:', AppManager.currentApp)
             AppManager.currentApp.stop();
         }
 
         AppManager.currentApp = currentApp;
         
-        if(currentApp){
-            AppManager.execute("set:active:header", "packages");
+        if(currentApp){            
             currentApp.start(args);
+            // AppManager.module(moduleName).start();
         }
     };
 

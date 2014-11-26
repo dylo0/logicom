@@ -18,15 +18,15 @@ define(["app", "backbone.picky"], function(AppManager){
 
     var initializeHeaders = function() {
         Entities.headers = new Entities.HeaderCollection([
-            { name: "Ładunki", url: "packages" },
-            { name: "Pojazdy", url: "vehicles" },
-            { name: "Chat", url: "chat" },
-            { name: "Moje oferty", url: "myoffers" },
-            { name: "Forum", url: "discussion" },
+            { name: "Ładunki", url: "loads", module: 'LoadMarket' },
+            { name: "Pojazdy", url: "vehicles", module: 'VehicleMarket' },
+            { name: "Chat", url: "chat", module: 'ChatApp' },
+            { name: "Moje oferty", url: "offers", module: "OwnOffer" },
+            { name: "Forum", url: "board", module: "Board"},
             { name: "Więcej", url: "", nestedLinks: [
-                { name: "Baza firm", url: "companies" },
-                { name: "Kontakty", url: "allcontacts" },
-                { name: "Archiwum", url: "archive" }
+                { name: "Baza firm", url: "companies", module: "Company"},
+                { name: "Kontakty", url: "allcontacts", module: "ContactList"},
+                { name: "Archiwum", url: "archive", module: "Archive" }
         ]}
     ]);
 

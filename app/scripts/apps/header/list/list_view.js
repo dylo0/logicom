@@ -20,7 +20,6 @@ AppManager.module("HeaderApp.List.View", function(View, ContactManager, Backbone
 
         initialize: function () {
             var nestedCollection = this.model.get('nestedLinks');
-            console.log(nestedCollection);
             if(nestedCollection) {
                 this.collection = nestedCollection;
                 this.itemViewContainer = ".dropdown-menu";

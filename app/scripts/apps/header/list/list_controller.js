@@ -8,7 +8,9 @@ define(["app", "apps/header/list/list_view"], function(ContactManager, View){
 
                     headers.on("itemview:navigate", function(childView, model){
                         var url = model.get("url");
-                        AppManager.trigger("show:module", url);
+                        var module = model.get("module");
+
+                        AppManager.execute("show:module", module);
                         AppManager.execute("set:active:header", url);
                     });
 

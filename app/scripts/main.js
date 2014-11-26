@@ -7,6 +7,7 @@ require([
 	'apps/login/login_app',
 	'apps/header/header_app',
 	'apps/chat/chat_app',
+	'apps/loadMarket/load_market_app',
 	'apps/contacts/contacts_app',
 	'apps/conversations/conversations_app',
 	'entities/credential',
