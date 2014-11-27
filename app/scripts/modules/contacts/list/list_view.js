@@ -1,6 +1,6 @@
 define(["app",
-        "hbs!apps/contacts/list/templates/contactList_tmpl", 
-        "hbs!apps/contacts/list/templates/user_tmpl"],
+        "hbs!modules/contacts/list/templates/contactList_tmpl", 
+        "hbs!modules/contacts/list/templates/user_tmpl"],
         function(AppManager, ContactListTpl, UserTpl){
     AppManager.module("ContactsApp.List.View", function(View, AppManager, Backbone, Marionette, $, _){
         View.UserView = Backbone.Marionette.ItemView.extend({  

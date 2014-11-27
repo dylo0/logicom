@@ -1,4 +1,4 @@
-define(["app", "apps/header/list/list_controller"], function(AppManager, Controller){
+define(["app", "modules/header/list/list_controller"], function(AppManager, Controller){
     AppManager.module("HeaderApp", function(HeaderApp, AppManager, Backbone, Marionette, $, _){ 
         HeaderApp.startWithParent = false;
 

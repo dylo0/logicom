@@ -1,4 +1,4 @@
-define(["app", "apps/login/incomingUser/incomingUser_controller"], function(AppManager, Controller){
+define(["app", "modules/login/incomingUser/incomingUser_controller"], function(AppManager, Controller){
     AppManager.module("LoginApp", function(LoginApp, AppManager, Backbone, Marionette, $, _){ 
         LoginApp.startWithParent = false;
 

@@ -1,6 +1,6 @@
 define(["app",
-        "hbs!apps/conversations/list/templates/conversation_tmpl", 
-        "hbs!apps/conversations/list/templates/message_tmpl"],
+        "hbs!modules/conversations/list/templates/conversation_tmpl", 
+        "hbs!modules/conversations/list/templates/message_tmpl"],
         function(AppManager, conversationTmpl, messageTmpl){
     AppManager.module("ConversationsApp.List.View", function(View, AppManager, Backbone, Marionette, $, _){
         

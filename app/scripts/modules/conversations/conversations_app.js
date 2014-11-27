@@ -1,4 +1,4 @@
-define(["app", "apps/conversations/list/list_controller", "ionsound"], function(AppManager, Controller){
+define(["app", "modules/conversations/list/list_controller", "ionsound"], function(AppManager, Controller){
     AppManager.module("ConversationsApp", function(ConversationsApp, AppManager, Backbone, Marionette, $, _){ 
         ConversationsApp.startWithParent = false;
        

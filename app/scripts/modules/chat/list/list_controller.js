@@ -1,5 +1,5 @@
-define(["app", "apps/loadMarket/list/list_view"], function(AppManager, View){
-    AppManager.module("LoadMarket.List", function(List, AppManager, Backbone, Marionette, $, _){
+define(["app", "modules/chat/list/list_view"], function(AppManager, View){
+    AppManager.module("ChatApp.List", function(List, AppManager, Backbone, Marionette, $, _){
         List.Controller = {
             listMessages: function () {
                 var messages = AppManager.request('chat:entities');
@@ -70,5 +70,5 @@ define(["app", "apps/loadMarket/list/list_view"], function(AppManager, View){
         };
     });
 
-    return AppManager.LoadMarket.List.Controller;
+    return AppManager.ChatApp.List.Controller;
 });

@@ -1,4 +1,4 @@
-define(["app", "apps/LoadMarket/list/list_controller"], function(AppManager, Controller){
+define(["app", "modules/LoadMarket/list/list_controller"], function(AppManager, Controller){
     AppManager.module("LoadMarket", function(LoadMarket, AppManager, Backbone, Marionette, $, _){ 
         LoadMarket.startWithParent = false;
 

@@ -1,4 +1,4 @@
-define(["app", "apps/chat/list/list_controller"], function(AppManager, Controller){
+define(["app", "modules/chat/list/list_controller"], function(AppManager, Controller){
     AppManager.module("ChatApp", function(ChatApp, AppManager, Backbone, Marionette, $, _){ 
         ChatApp.startWithParent = false;
 

@@ -1,7 +1,7 @@
 define(["app",
-        "hbs!apps/header/list/templates/list_tmpl",
-        "hbs!apps/header/list/templates/list_item_tmpl",
-        "hbs!apps/header/list/templates/list_nesteditem_tmpl"],
+        "hbs!modules/header/list/templates/list_tmpl",
+        "hbs!modules/header/list/templates/list_item_tmpl",
+        "hbs!modules/header/list/templates/list_nesteditem_tmpl"],
         function(AppManager, listTpl, listItemTpl, listNestedItemTpl){
 AppManager.module("HeaderApp.List.View", function(View, ContactManager, Backbone, Marionette, $, _){
     View.NestedHeader = Marionette.ItemView.extend({

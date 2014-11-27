@@ -1,4 +1,4 @@
-define(["app", "hbs!apps/login/incomingUser/templates/login_template"], function(AppManager, loginTmpl){
+define(["app", "hbs!modules/login/incomingUser/templates/login_template"], function(AppManager, loginTmpl){
     AppManager.module("LoginApp.IncomingUser.View", function(View, AppManager, Backbone, Marionette, $, _){
         View.loginView = Backbone.Marionette.ItemView.extend({
         	initialize: function () {

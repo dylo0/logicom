@@ -1,4 +1,4 @@
-define(["app", "apps/contacts/list/list_view"], function(AppManager, View){
+define(["app", "modules/contacts/list/list_view"], function(AppManager, View){
     AppManager.module("ContactsApp.List", function(List, AppManager, Backbone, Marionette, $, _){
         List.Controller = {
             listUsers: function () {

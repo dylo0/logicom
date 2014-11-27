@@ -1,4 +1,4 @@
-define(["app", "apps/conversations/list/list_view", "ionsound"], function(AppManager, View){
+define(["app", "modules/conversations/list/list_view", "ionsound"], function(AppManager, View){
     AppManager.module("ConversationsApp.List", function(List, AppManager, Backbone, Marionette, $, _){
         List.Controller = {
 

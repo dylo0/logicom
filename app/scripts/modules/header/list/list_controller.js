@@ -1,4 +1,4 @@
-define(["app", "apps/header/list/list_view"], function(ContactManager, View){
+define(["app", "modules/header/list/list_view"], function(ContactManager, View){
     AppManager.module("HeaderApp.List", function(List, AppManager, Backbone, Marionette, $, _){
         List.Controller = {
             listHeader: function(){

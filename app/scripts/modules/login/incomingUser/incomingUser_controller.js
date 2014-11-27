@@ -1,4 +1,4 @@
-define(["app", "apps/login/incomingUser/incomingUser_view"], function(AppManager, View){
+define(["app", "modules/login/incomingUser/incomingUser_view"], function(AppManager, View){
     AppManager.module("LoginApp.IncomingUser", function(IncomingUser, AppManager, Backbone, Marionette, $, _){
         IncomingUser.Controller = {
             showLoginPage: function () {

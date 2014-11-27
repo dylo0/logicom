@@ -1,6 +1,6 @@
 define(["app",
-        "hbs!apps/loadMarket/list/templates/chat_tmpl", 
-        "hbs!apps/loadMarket/list/templates/message_tmpl"],
+        "hbs!modules/loadMarket/list/templates/chat_tmpl", 
+        "hbs!modules/loadMarket/list/templates/message_tmpl"],
         function(AppManager, ChatTpl, MessageTpl){
     AppManager.module("LoadMarket.List.View", function(View, AppManager, Backbone, Marionette, $, _){
         View.MessageView = Backbone.Marionette.ItemView.extend({

@@ -1,6 +1,6 @@
 define(["app",
-        "hbs!apps/chat/list/templates/chat_tmpl", 
-        "hbs!apps/chat/list/templates/message_tmpl"],
+        "hbs!modules/chat/list/templates/chat_tmpl", 
+        "hbs!modules/chat/list/templates/message_tmpl"],
         function(AppManager, ChatTpl, MessageTpl){
     AppManager.module("ChatApp.List.View", function(View, AppManager, Backbone, Marionette, $, _){
         View.MessageView = Backbone.Marionette.ItemView.extend({
