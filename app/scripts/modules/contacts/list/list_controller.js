@@ -6,7 +6,7 @@ define(["app", "modules/contacts/list/list_view"], function(AppManager, View){
                 var listView = this.getListView(users);
                 var that = this;
 
-                listView.on("itemview:conversation:start", this.startConversation);
+                listView.on("childview:conversation:start", this.startConversation);
 
                 AppManager.sidebarRegion.show(listView);
 

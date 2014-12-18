@@ -12,7 +12,7 @@ AppManager.module("HeaderApp.List.View", function(View, ContactManager, Backbone
     View.Header = Marionette.CompositeView.extend({
         template: listItemTpl,
         tagName: "li",
-        // itemView: View.NestedHeader,
+        // childView: View.NestedHeader,
 
         events: {
             "click a": "navigate"
@@ -22,7 +22,7 @@ AppManager.module("HeaderApp.List.View", function(View, ContactManager, Backbone
             var nestedCollection = this.model.get('nestedLinks');
             if(nestedCollection) {
                 this.collection = nestedCollection;
-                this.itemViewContainer = ".dropdown-menu";
+                this.childViewContainer = ".dropdown-menu";
             }
         },
 
@@ -41,8 +41,8 @@ AppManager.module("HeaderApp.List.View", function(View, ContactManager, Backbone
 
     View.Headers = Marionette.CompositeView.extend({
         template: listTpl,
-        itemView: View.Header,
-        itemViewContainer: "ul",
+        childView: View.Header,
+        childViewContainer: "ul",
     });
 });
 

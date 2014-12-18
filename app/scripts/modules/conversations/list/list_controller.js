@@ -15,19 +15,19 @@ define(["app", "modules/conversations/list/list_view", "ionsound"], function(App
                     that.addMessage(data, activeConversations)
                 });
 
-                listView.on('itemview:conversation:open', function (childview, user) {
+                listView.on('childview:conversation:open', function (childview, user) {
                     that.openConversation(user, activeConversations);  
                 });
 
-                listView.on('itemview:send:message', function (childview, reciver, text) { 
+                listView.on('childview:send:message', function (childview, reciver, text) { 
                     that.sendMessage(reciver, text)
                 });
 
-                listView.on('itemview:conversation:close', function (childview) {
+                listView.on('childview:conversation:close', function (childview) {
                     that.closeConversation(childview, activeConversations);
                 });
 
-                listView.on('itemview:message:unread', function (childview) {
+                listView.on('childview:message:unread', function (childview) {
                     that.playNewMessageSound();
                 });
 

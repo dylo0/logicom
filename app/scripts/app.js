@@ -6,14 +6,21 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
         mainRegion:             "#main-region",
         sidebarRegion:          "#sidebar",
         conversationsRegion:    "#conversations-region",
-        loginRegion:            "#login"
+        // loginRegion:            "#login"
     });
 
     AppManager.addInitializer( function () {
-        AppManager.module("LoginApp").start(); 
+        // AppManager.module("LoginApp").start(); 
+        // AppManager.module("HeaderApp").start();
+        // AppManager.startModule('LoadMarket');
+
+        // Mocked login for development
+        AppManager.trigger('login:success', {id: 17, username: "Tomasz"})
+
     });
 
     AppManager.on('login:success', function (credentials) {
+        console.log(credentials);
         AppManager.execute('set:user:info', credentials);
 
         // waits for contacts initialization for proper application behavior
@@ -40,7 +47,9 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
     });
 
     AppManager.startApplication = function () {
-        AppManager.loginRegion.close();
+        console.log('starting app');
+        // AppManager.loginRegion.destroy();
+        console.log('login destroyed');
         AppManager.module("HeaderApp").start();
         AppManager.module("ConversationsApp").start();
         AppManager.module("ContactsApp").start();
@@ -49,6 +58,7 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
     };
 
     AppManager.startModule = function(moduleName, args){
+        console.log('starting module');
         var currentApp = moduleName ? AppManager.module(moduleName) : null;
         if (AppManager.currentApp === currentApp){ return; }
         

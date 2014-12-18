@@ -17,10 +17,10 @@ define(["app",
         });
 
         View.ContactsView = Backbone.Marionette.CompositeView.extend({
-            itemView: View.UserView,
+            childView: View.UserView,
             className: 'jumbotron variable-height',
             template: ContactListTpl,
-            itemViewContainer: "#contact-list-container"
+            childViewContainer: "#contact-list-container"
             
         });
     });

@@ -6,7 +6,7 @@ define(["app", "modules/header/list/list_view"], function(ContactManager, View){
                     var links = ContactManager.request("header:entities");
                     var headers = new View.Headers({collection: links});
 
-                    headers.on("itemview:navigate", function(childView, model){
+                    headers.on("childview:navigate", function(childView, model){
                         var url = model.get("url");
                         var module = model.get("module");
 

@@ -46,15 +46,26 @@ body {
 
     .nav {
         height: 30px;
-        margin-top: 25px;
+        margin-top: 10px;
+        
         li {
             vertical-align: middle;
-            a {
-                color: #777;
-
-                .active: {
-                    background: #eee;
+            
+            &:hover {
+                a {
+                    background-color: #ccc;
                 }
+            }
+
+            &.active {
+                a {
+                    background-color: #ddd;
+                }
+            }
+
+            a {
+                padding: 2px;
+                color: #777;
             }
         }
     }

@@ -16,8 +16,8 @@ define(["app",
                 this.model.on('new:message', this.onNewMessage, this);
             },
 
-            itemView: View.MessageView,
-            itemViewContainer: "#conversation-messages-container",
+            childView: View.MessageView,
+            childViewContainer: "#conversation-messages-container",
             template: conversationTmpl,
             className: "col-sm-6 col-md-3 conversation",
             
@@ -103,7 +103,7 @@ define(["app",
 
 
         View.ConversationList = Backbone.Marionette.CollectionView.extend({
-            itemView: View.ConversationView,
+            childView: View.ConversationView,
             className: 'active-conversations',
         });
     });
