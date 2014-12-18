@@ -10,7 +10,13 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
     });
 
     AppManager.addInitializer( function () {
-        AppManager.module("LoginApp").start(); 
+        AppManager.loginRegion.close();
+        AppManager.module("HeaderApp").start();
+        AppManager.module("ConversationsApp").start();
+        // AppManager.module("ContactsApp").start();
+
+        AppManager.startModule("LoadMarket"); 
+        // AppManager.module("LoginApp").start(); 
     });
 
     AppManager.on('login:success', function (credentials) {
@@ -45,7 +51,7 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
         AppManager.module("ConversationsApp").start();
         AppManager.module("ContactsApp").start();
         
-        AppManager.startModule("ChatApp");   
+        AppManager.startModule("ChatApp");      
     };
 
     AppManager.startModule = function(moduleName, args){
