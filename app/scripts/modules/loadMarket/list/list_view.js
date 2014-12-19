@@ -1,5 +1,5 @@
 define(["app",
-        "hbs!modules/loadMarket/list/templates/chat_tmpl", 
+        "hbs!modules/loadMarket/list/templates/loads_tmpl", 
         "hbs!modules/loadMarket/list/templates/message_tmpl"],
         function(AppManager, ChatTpl, MessageTpl){
     AppManager.module("LoadMarket.List.View", function(View, AppManager, Backbone, Marionette, $, _){
@@ -15,10 +15,12 @@ define(["app",
 
             ui: {
                 input: '#message-input',
-                messages: '#chat-messages-container'
+                messages: '#loads-container'
             },
 
-            childViewContainer: '#chat-messages-container',
+
+            childViewContainer: '#loads-container',
+
 
             events: {
                 'keypress #message-input': 'onInputKeypress',

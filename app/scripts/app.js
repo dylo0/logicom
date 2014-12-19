@@ -54,7 +54,7 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
         AppManager.module("ConversationsApp").start();
         AppManager.module("ContactsApp").start();
         
-        AppManager.startModule("ChatApp");   
+        AppManager.startModule("ChatApp");      
     };
 
     AppManager.startModule = function(moduleName, args){
