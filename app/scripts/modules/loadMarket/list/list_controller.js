@@ -2,7 +2,7 @@ define(["app", "modules/loadMarket/list/list_view"], function(AppManager, View){
     AppManager.module("LoadMarket.List", function(List, AppManager, Backbone, Marionette, $, _){
         List.Controller = {
             listMessages: function () {
-                var messages = AppManager.request('chat:entities');
+                var messages = AppManager.request('Loads:entities');
                 var listView = this.getListView(messages);
                 var that = this;
 

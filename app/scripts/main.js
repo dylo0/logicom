@@ -15,6 +15,7 @@ require([
 	'entities/message',
 	'entities/contact',
 	'entities/conversation',
+	'entities/loads'
 	// 'regionManager'
 ],
 function ( Backbone, Marionette, App ) {

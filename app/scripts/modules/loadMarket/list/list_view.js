@@ -5,7 +5,7 @@ define(["app",
     AppManager.module("LoadMarket.List.View", function(View, AppManager, Backbone, Marionette, $, _){
         View.MessageView = Backbone.Marionette.ItemView.extend({
             template: MessageTpl,
-            className: "chat-message"
+            tagName: 'tr'
         });
 
         View.ChatView = Backbone.Marionette.CompositeView.extend({
@@ -19,7 +19,7 @@ define(["app",
             },
 
 
-            childViewContainer: '#loads-container',
+            childViewContainer: '#stock-items',
 
 
             events: {

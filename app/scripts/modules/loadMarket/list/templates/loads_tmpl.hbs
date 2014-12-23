@@ -1,405 +1,108 @@
 <div class="list-container" id="loads-container"> 
-<form action="#" method="post">
-	<fieldset>
-		<legend>Filtry</legend>
+	<form action="#" method="post">
 		<fieldset>
-			<legend>Skąd</legend>
-			<select name="country1">
-				<option>Kraj</option>
-				<option>Norwegia</option>
-				<option>Niemcy</option>
-				<option>Francja</option>
-				<option>Wielka Brytania</option>
-			</select>
-			<select name="zipCode1">
-				<option>Kod pocztowy</option>
-				<option>12-345</option>
-				<option>23-234</option>
-				<option>87-543</option>
-			</select>
-			<select name="country2">
-				<option>Kraj</option>
-				<option>Norwegia</option>
-				<option>Niemcy</option>
-				<option>Francja</option>
-				<option>Wielka Brytania</option>
-			</select>
-			<select name="zipCode2">
-				<option>Kod pocztowy</option>
-				<option>34-567</option>
-				<option>12-345</option>
-				<option>23-234</option>
-				<option>87-543</option>
-			</select>
+			<legend>Filtry</legend>
+			<fieldset>
+				<legend>Skąd</legend>
+				<select name="country1">
+					<option>Kraj</option>
+					<option>Norwegia</option>
+					<option>Niemcy</option>
+					<option>Francja</option>
+					<option>Wielka Brytania</option>
+				</select>
+				<select name="zipCode1">
+					<option>Kod pocztowy</option>
+					<option>12-345</option>
+					<option>23-234</option>
+					<option>87-543</option>
+				</select>
+				<select name="country2">
+					<option>Kraj</option>
+					<option>Norwegia</option>
+					<option>Niemcy</option>
+					<option>Francja</option>
+					<option>Wielka Brytania</option>
+				</select>
+				<select name="zipCode2">
+					<option>Kod pocztowy</option>
+					<option>34-567</option>
+					<option>12-345</option>
+					<option>23-234</option>
+					<option>87-543</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend>Dokąd</legend>
+				<select name="country1">
+					<option>Kraj</option>
+					<option>Norwegia</option>
+					<option>Niemcy</option>
+					<option>Francja</option>
+					<option>Wielka Brytania</option>
+				</select>
+				<select name="zipCode1">
+					<option>Kod pocztowy</option>
+					<option>12-345</option>
+					<option>23-234</option>
+					<option>87-543</option>
+				</select>
+				<select name="country2">
+					<option>Kraj</option>
+					<option>Norwegia</option>
+					<option>Niemcy</option>
+					<option>Francja</option>
+					<option>Wielka Brytania</option>
+				</select>
+				<select name="zipCode2">
+					<option>Kod pocztowy</option>
+					<option>34-567</option>
+					<option>12-345</option>
+					<option>23-234</option>
+					<option>87-543</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend>Wymiary</legend>
+				<input type="text" placeholder="Waga od" />
+				<input type="text" placeholder="długość do" />
+				<input type="text" placeholder="Waga od" />
+				<input type="text" placeholder="długość do" />
+			</fieldset>
+			<div>
+				<select name="car">
+					<option>Pojazd</option>
+					<option>Samolot</option>
+					<option>Motor</option>
+				</select>
+				<input type="checkbox" name="adr" value="adr" /><label for="adr">ADR</label>
+				<input type="submit" value="Filtruj" />
+			</div>
 		</fieldset>
-		<fieldset>
-			<legend>Dokąd</legend>
-			<select name="country1">
-				<option>Kraj</option>
-				<option>Norwegia</option>
-				<option>Niemcy</option>
-				<option>Francja</option>
-				<option>Wielka Brytania</option>
-			</select>
-			<select name="zipCode1">
-				<option>Kod pocztowy</option>
-				<option>12-345</option>
-				<option>23-234</option>
-				<option>87-543</option>
-			</select>
-			<select name="country2">
-				<option>Kraj</option>
-				<option>Norwegia</option>
-				<option>Niemcy</option>
-				<option>Francja</option>
-				<option>Wielka Brytania</option>
-			</select>
-			<select name="zipCode2">
-				<option>Kod pocztowy</option>
-				<option>34-567</option>
-				<option>12-345</option>
-				<option>23-234</option>
-				<option>87-543</option>
-			</select>
-		</fieldset>
-		<fieldset>
-			<legend>Wymiary</legend>
-			<input type="text" placeholder="Waga od" />
-			<input type="text" placeholder="długość do" />
-			<input type="text" placeholder="Waga od" />
-			<input type="text" placeholder="długość do" />
-		</fieldset>
-		<div>
-			<select name="car">
-				<option>Pojazd</option>
-				<option>Samolot</option>
-				<option>Motor</option>
-			</select>
-			<input type="checkbox" name="adr" value="adr" /><label for="adr">ADR</label>
-			<input type="submit" value="Filtruj" />
-		</div>
-	</fieldset>
-	<ul>
-		<li><a href="">PL4 PL5[x]</a></li>
-		<li><a href="">GB15</a></li>
-		<li><a href="">IT154</a></li>
-		<li><a href="">MarlenaT123</a></li>
-	</ul>
-	<div>
-		<table>
-			<thead>
-				<tr>
-					<td>Termin</td>
-					<td>kod</td>
-					<td>Od</td>
-					<td>kod</td>
-					<td>Do</td>
-					<td>Ciężar</td>
-					<td>Długość</td>
-					<td>Dodano</td>
-					<td>Kontakt</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>s</td>
-					<td>d</td>
-					<td>f</td>
-					<td>g</td>
-					<td>h</td>
-					<td>j</td>
-					<td>k</td>
-					<td>l</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</form>
+		<ul>
+			<li><a href="">PL4 PL5[x]</a></li>
+			<li><a href="">GB15</a></li>
+			<li><a href="">IT154</a></li>
+			<li><a href="">T123</a></li>
+		</ul>
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<td>Termin</td>
+				<td>kod</td>
+				<td>Od</td>
+				<td>kod</td>
+				<td>Do</td>
+				<td>Ciężar</td>
+				<td>Długość</td>
+				<td>Dodano</td>
+				<td>Kontakt</td>
+			</tr>
+		</thead>
+		<tbody id="stock-items">
+
+	
+		</tbody>
+	</table>
 </div>
