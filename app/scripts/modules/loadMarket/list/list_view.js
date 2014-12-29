@@ -1,7 +1,8 @@
 define(["app",
+        "select2",
         "hbs!modules/loadMarket/list/templates/loads_tmpl", 
         "hbs!modules/loadMarket/list/templates/message_tmpl"],
-        function(AppManager, ChatTpl, MessageTpl){
+        function(AppManager, select2, ChatTpl, MessageTpl){
     AppManager.module("LoadMarket.List.View", function(View, AppManager, Backbone, Marionette, $, _){
         View.MessageView = Backbone.Marionette.ItemView.extend({
             template: MessageTpl,
@@ -15,7 +16,8 @@ define(["app",
 
             ui: {
                 input: '#message-input',
-                messages: '#loads-container'
+                messages: '#loads-container',
+                selects: 'select'
             },
 
 
@@ -28,6 +30,7 @@ define(["app",
 
             onShow: function () {
                 this.scrollMessages();
+                $(this.ui.selects).select2();
             },
 
             onAddChild: function () {

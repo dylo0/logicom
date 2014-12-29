@@ -40,6 +40,8 @@ require.config({
         "backbone.picky": 'vendor/backbone.picky',
         "backbone.syphon": 'vendor/backbone.syphon',
 
+        select2: '../bower_components/select2/select2.min',
+        
         //alias for ionsound
         ionsound: 'vendor/ion.sound.min',
 

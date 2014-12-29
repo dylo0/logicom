@@ -4,27 +4,27 @@
 			<legend>Filtry</legend>
 			<fieldset>
 				<legend>Skąd</legend>
-				<select name="country1">
+				<select style="width:200px" id="country" name="country1">
 					<option>Kraj</option>
 					<option>Norwegia</option>
 					<option>Niemcy</option>
 					<option>Francja</option>
 					<option>Wielka Brytania</option>
 				</select>
-				<select name="zipCode1">
+				<select style="width:200px" name="zipCode1">
 					<option>Kod pocztowy</option>
 					<option>12-345</option>
 					<option>23-234</option>
 					<option>87-543</option>
 				</select>
-				<select name="country2">
+				<select style="width:200px" name="country2">
 					<option>Kraj</option>
 					<option>Norwegia</option>
 					<option>Niemcy</option>
 					<option>Francja</option>
 					<option>Wielka Brytania</option>
 				</select>
-				<select name="zipCode2">
+				<select style="width:200px" name="zipCode2">
 					<option>Kod pocztowy</option>
 					<option>34-567</option>
 					<option>12-345</option>
@@ -34,27 +34,27 @@
 			</fieldset>
 			<fieldset>
 				<legend>Dokąd</legend>
-				<select name="country1">
+				<select style="width:200px" name="country1">
 					<option>Kraj</option>
 					<option>Norwegia</option>
 					<option>Niemcy</option>
 					<option>Francja</option>
 					<option>Wielka Brytania</option>
 				</select>
-				<select name="zipCode1">
+				<select style="width:200px" name="zipCode1">
 					<option>Kod pocztowy</option>
 					<option>12-345</option>
 					<option>23-234</option>
 					<option>87-543</option>
 				</select>
-				<select name="country2">
+				<select style="width:200px" name="country2">
 					<option>Kraj</option>
 					<option>Norwegia</option>
 					<option>Niemcy</option>
 					<option>Francja</option>
 					<option>Wielka Brytania</option>
 				</select>
-				<select name="zipCode2">
+				<select style="width:200px" name="zipCode2">
 					<option>Kod pocztowy</option>
 					<option>34-567</option>
 					<option>12-345</option>
@@ -64,10 +64,10 @@
 			</fieldset>
 			<fieldset>
 				<legend>Wymiary</legend>
-				<input type="text" placeholder="Waga od" />
-				<input type="text" placeholder="długość do" />
-				<input type="text" placeholder="Waga od" />
-				<input type="text" placeholder="długość do" />
+				<input type="text" placeholder="Waga od [kg]" />
+				<input type="text" placeholder="długość do [m]" />
+				<input type="text" placeholder="Waga od [kg]" />
+				<input type="text" placeholder="długość do [kg]" />
 			</fieldset>
 			<div>
 				<select name="car">
@@ -79,13 +79,14 @@
 				<input type="submit" value="Filtruj" />
 			</div>
 		</fieldset>
-		<ul>
-			<li><a href="">PL4 PL5[x]</a></li>
-			<li><a href="">GB15</a></li>
-			<li><a href="">IT154</a></li>
-			<li><a href="">T123</a></li>
-		</ul>
 	</form>
+	<ul>
+		<li><a href="">PL4 PL5[x]</a></li>
+		<li><a href="">GB15</a></li>
+		<li><a href="">IT154</a></li>
+		<li><a href="">T123</a></li>
+	</ul>
+	<div class="table-wrapper">
 	<table>
 		<thead>
 			<tr>
@@ -100,9 +101,7 @@
 				<td>Kontakt</td>
 			</tr>
 		</thead>
-		<tbody id="stock-items">
-
-	
-		</tbody>
+		<tbody id="stock-items"></tbody>
 	</table>
+	</div>
 </div>

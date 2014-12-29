@@ -1,20 +1,19 @@
 #loads-container {
-    position: absolute;
     top: 10px;
     bottom: 60px;
     left: 10px;
     right: 10px;
     height: initial;
     width: 100%;
-    font-size: 14px;
+    font-size: 14px;                                                   
     line-height: 1;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 
 	select, input{
 		background-color: white;
-		border: 1px solid black;
+		border: 1px solid #bbb;
 	}
-    fieldset{
+/*    fieldset{
 	    div{
 	    	float: left;
 	    	width: 20%;
@@ -32,7 +31,7 @@
 	    		font-weight: normal;
 	    	}
 	    }
-    	border: 1px solid black;
+    	border: 1px solid #bbb;
     	width: 100%;
     	display: block;
     	legend{
@@ -60,12 +59,12 @@
     			height:22px;
     		}	
     	}
-    }
+    }*/
     form > ul{
     	margin:0;
     	margin-top:10px;
     	li{
-    		border: 1px solid black;
+    		border: 1px solid #bbb;
     		a{
     			padding: 3px;
     			text-decoration: none;
@@ -77,11 +76,15 @@
     	float: left;
     	list-style: none;
     }
+    .table-wrapper {
+        overflow-y: auto;
+    }
+
     table{
     	width: 100%;
-    	clear: both;
-    	position:relative;
-    	border: 1px solid black;
+    	//clear: both;
+    	//position:relative;
+    	border: 1px solid #bbb;
     	// & thead{
     	// 	position: absolute;
     	// 	top:0;
@@ -94,8 +97,8 @@
     	}
     	td{
 
-    		border-left: 1px solid black;
-    		border-right: 1px solid black;
+    		border-left: 1px solid #bbb;
+    		border-right: 1px solid #bbb;
     	}
     }
 }
