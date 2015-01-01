@@ -4,6 +4,7 @@ require([
 	'app',
 	'communicator',
 	'config/main',
+	'config/datatablesCfg',
 	'modules/login/login_app',
 	'modules/header/header_app',
 	'modules/chat/chat_app',
@@ -16,7 +17,6 @@ require([
 	'entities/contact',
 	'entities/conversation',
 	'entities/loads'
-	// 'regionManager'
 ],
 function ( Backbone, Marionette, App ) {
     'use strict';

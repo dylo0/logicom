@@ -1,9 +1,12 @@
 define(["app",
         "select2",
+        "datatables",
         "hbs!modules/loadMarket/list/templates/loads_tmpl", 
         "hbs!modules/loadMarket/list/templates/message_tmpl"],
-        function(AppManager, select2, ChatTpl, MessageTpl){
+        function(AppManager, select2, datatables, ChatTpl, MessageTpl){
     AppManager.module("LoadMarket.List.View", function(View, AppManager, Backbone, Marionette, $, _){
+        var dataTablesCfg = AppManager.request('config:dataTables');;
+
         View.MessageView = Backbone.Marionette.ItemView.extend({
             template: MessageTpl,
             tagName: 'tr'
@@ -31,6 +34,7 @@ define(["app",
             onShow: function () {
                 this.scrollMessages();
                 $(this.ui.selects).select2();
+                $('table').DataTable(dataTablesCfg);
             },
 
             onAddChild: function () {

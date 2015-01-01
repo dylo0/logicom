@@ -23,7 +23,7 @@ require.config({
             exports: 'jquery'
         },
         "backbone.picky": ["backbone"],
-        "backbone.syphon": ["backbone"],
+        "backbone.syphon": ["backbone"]
     },
 
     paths: {
@@ -41,7 +41,8 @@ require.config({
         "backbone.syphon": 'vendor/backbone.syphon',
 
         select2: '../bower_components/select2/select2.min',
-        
+        datatables: '../bower_components/datatables/media/js/jquery.dataTables',
+
         //alias for ionsound
         ionsound: 'vendor/ion.sound.min',
 
