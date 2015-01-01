@@ -1,5 +1,17 @@
 define(['app'], function ( AppManager) {
+	var tableHeight;
+	// $(document).ready(function(){
+        tableHeight = $(window).height() - 500;
+		
+		$(window).resize(function() {
+		  $('.dataTables_scrollBody').css('height', ($(window).height() - 500));
+		});
+	// });
+
 	dataTablesCfg = {
+		scrollY:        tableHeight,
+        scrollCollapse: true,
+        pageLength: 100,
 		language: {
 		    "sProcessing":   "Przetwarzanie...",
 		    "sLengthMenu":   "Pokaż _MENU_ pozycji",
@@ -25,7 +37,7 @@ define(['app'], function ( AppManager) {
 		    }
 		}
 	}
-	
+
 	AppManager.reqres.setHandler("config:dataTables", function(){
 	    return dataTablesCfg;
 	});
