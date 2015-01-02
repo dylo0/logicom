@@ -1,55 +1,63 @@
 <div class="list-container" id="loads-container"> 
-	<form action="#" method="post">
+	<form class="well" action="#" method="post">
 		<fieldset>
-			<legend>Filtry</legend>
-			<fieldset>
-				<legend>Skąd</legend>
-				<select style="width:200px" name="country" data-placeholder="Kraj">
-					<option></option>
-					<option>Norwegia</option>
-					<option>Niemcy</option>
-					<option>Francja</option>
-					<option>Wielka Brytania</option>
-				</select>
-				<select style="width:140px" name="zipCode">
-					<option>Kod pocztowy</option>
-					<option>12-345</option>
-					<option>23-234</option>
-					<option>87-543</option>
-				</select>
+			<fieldset class="general location">
+				<fieldset>
+					<label>Skąd</label>
+					<select style="width:200px" name="country" data-placeholder="Kraj">
+						<option></option>
+						<option>Norwegia</option>
+						<option>Niemcy</option>
+						<option>Francja</option>
+						<option>Wielka Brytania</option>
+					</select>
+					<select style="width:100px" name="zipCode" data-placeholder="Kraj">
+						<option></option>
+						<option>12-345</option>
+						<option>23-234</option>
+						<option>87-543</option>
+					</select>
+				</fieldset>
+				<fieldset>
+					<label>Dokąd</label>
+					<select style="width:200px" name="country1" data-placeholder="Kod">
+						<option></option>
+						<option>Norwegia</option>
+						<option>Niemcy</option>
+						<option>Francja</option>
+						<option>Wielka Brytania</option>
+					</select>
+					<select style="width:100px" name="zipCode1" data-placeholder="Kod">
+						<option></option>
+						<option>12-345</option>
+						<option>23-234</option>
+						<option>87-543</option>
+					</select>
+				</fieldset>
 			</fieldset>
-			<fieldset>
-				<legend>Dokąd</legend>
-				<select style="width:200px" name="country1">
-					<option>Kraj</option>
-					<option>Norwegia</option>
-					<option>Niemcy</option>
-					<option>Francja</option>
-					<option>Wielka Brytania</option>
-				</select>
-				<select style="width:140px" name="zipCode1">
-					<option>Kod pocztowy</option>
-					<option>12-345</option>
-					<option>23-234</option>
-					<option>87-543</option>
-				</select>
+			
+			<fieldset class="general dimensions">
+				<label>Masa</label>
+				<input type="text" placeholder="od" /> 
+				<input type="text" placeholder="do" />
+				<label class="unit">kg</label>
+
+				<label>Długość</label>
+				<input type="text" placeholder="od" />
+				<input type="text" placeholder="do" />
+				<label class="unit">m</label>
 			</fieldset>
-			<fieldset>
-				<legend>Wymiary</legend>
-				<input type="text" placeholder="Waga od [kg]" />
-				<input type="text" placeholder="długość do [m]" />
-				<input type="text" placeholder="Waga od [kg]" />
-				<input type="text" placeholder="długość do [kg]" />
-			</fieldset>
-			<div>
-				<select name="car">
+
+			<fieldset class="general options">
+				<select class="select-car" name="car">
 					<option>Pojazd</option>
 					<option>Samolot</option>
 					<option>Motor</option>
 				</select>
 				<input type="checkbox" name="adr" value="adr" /><label for="adr">ADR</label>
-				<input type="submit" value="Filtruj" />
-			</div>
+			</fieldset>
+			
+			<input type="submit" value="Dodaj Filtr" />
 		</fieldset>
 	</form>
 	<ul>

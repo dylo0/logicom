@@ -5,7 +5,7 @@ define(["app",
     AppManager.module("ConversationsApp.List.View", function(View, AppManager, Backbone, Marionette, $, _){
         
         View.MessageView = Backbone.Marionette.ItemView.extend({      
-            template: messageTmpl,
+            template : messageTmpl,
             className: "chat-message"
         });
 
@@ -22,19 +22,19 @@ define(["app",
             className: "col-sm-6 col-md-3 conversation",
             
             ui: {
-                input: '#conversation-msg-input',
-                messages: '#conversation-messages-container',
-                collapsePanel: '.panel-collapse',
-                headingUsername: '.panel-heading a',
-                conversationHeading: '.panel-heading',
-                notificationIcon: '.notification-icon'
+                input               : '#conversation-msg-input',
+                messages            : '#conversation-messages-container',
+                collapsePanel       : '.panel-collapse',
+                headingUsername     : '.panel-heading a',
+                conversationHeading : '.panel-heading',
+                notificationIcon    : '.notification-icon'
             },
 
             events: {
-                'click .close': 'closeView',
-                'click .panel-heading a': 'onHeadingClick',
-                'keypress #conversation-msg-input': 'onInputKeypress',
-                'shown.bs.collapse .panel-collapse': 'scrollMessages'
+                'click .close'                      : 'closeView',
+                'click .panel-heading a'            : 'onHeadingClick',
+                'keypress #conversation-msg-input'  : 'onInputKeypress',
+                'shown.bs.collapse .panel-collapse' : 'scrollMessages'
             },
 
             closeView: function () {

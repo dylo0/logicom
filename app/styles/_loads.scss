@@ -9,95 +9,119 @@
     line-height: 1;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 
-	select, input{
-		background-color: white;
-		border: 1px solid #bbb;
-	}
-/*    fieldset{
-	    div{
-	    	float: left;
-	    	width: 20%;
-	    	padding:5px;
-	    	& *{
-	    		float: left;
-	    		clear: left;
-	    		width: 100%;
-	    	}
-	    	input[type=checkbox],label{
-	    		width: initial;
-	    	}
-	    	label{
-	    		clear: none;
-	    		font-weight: normal;
-	    	}
-	    }
-    	border: 1px solid #bbb;
-    	width: 100%;
-    	display: block;
-    	legend{
-    		font-size: inherit;
-    		width: initial;
-    		margin:0;
-    		margin-left:15px;
-    		border:none;
-    	}
-    	fieldset{
-    		float: left;
-    		width: 25%;
-    		margin: 3px;
-    		select[name=country1], select[name=country2]{
-    			float:left;
-    			clear:left;
-    			width:60px;
-    		}
-    		select[name=zipCode1], select[name=zipCode2]{
-    			float:right;
-    			width:120px;
-    		}
-    		input[type=text]{
-    			width: 40%;
-    			height:22px;
-    		}	
-    	}
-    }*/
+    form.well {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 15px
+    }
+
+    label {
+        text-align: right;
+    }
+
+    input {
+        background-color: white;
+        border: 1px solid #bbb;
+        width: 60px;
+        height: 26px;
+        padding-left: 5px;
+        margin-bottom: 5px;
+        float: left;
+        &[type=checkbox] {
+            width: 30px;
+            margin-top: 8px;
+        }
+
+        &[type=submit] {
+            float: right;
+            margin-right: 20px;
+            width: 90px;
+            height: 60px;
+            border-radius: 2px;
+        }
+    }
+
+    fieldset.general {
+        float: left;
+        margin-left: 10px;
+    }
+
+
+    .location { 
+        label {
+            width: 45px;
+        }        
+        fieldset {
+            margin-bottom: 5px;
+        }
+    }
+
+    .dimensions {
+        width: 250px;
+        input {
+            margin-right: 5px;
+            text-align: center;
+        }
+        label {
+            float: left;
+            width: 80px;
+            line-height: 26px;
+            padding-right: 5px;
+            &.unit {
+                text-align: left;
+                width: 40px;
+            }
+        }
+    }
+
+    .options {
+        width: 100px;
+        .select-car {
+            float: left;
+        }
+        label {
+            padding-top: 14px;
+            float: left;
+        }
+    }
+
+
     form > ul{
-    	margin:0;
-    	margin-top:10px;
-    	li{
-    		border: 1px solid #bbb;
-    		a{
-    			padding: 3px;
-    			text-decoration: none;
-    			color: inherit;
-    		}
-    	}
+        margin:0;
+        margin-top:10px;
+        li {
+            border: 1px solid #bbb;
+            a {
+                padding: 3px;
+                text-decoration: none;
+                color: inherit;
+            }
+        }
     }
     ul, li{
-    	float: left;
-    	list-style: none;
+        float: left;
+        list-style: none;
     }
+
+
     .table-wrapper {
-        margin-top: 30px;
+        margin-top: 50px;
         overflow-y: auto;
     }
 
-    table{
+    table {
     	width: 100%;
-    	//clear: both;
-    	//position:relative;
     	border: 1px solid #bbb;
-    	// & thead{
-    	// 	position: absolute;
-    	// 	top:0;
-    	// }
+ 
     	tr:nth-child(even){
     		background-color: #dddddd;
     	}
-    	thead{
+
+    	thead {
     		background-color: #bbbbbb;
     	}
-    	td{
 
+    	td {
     		border-left: 1px solid #bbb;
     		border-right: 1px solid #bbb;
     	}

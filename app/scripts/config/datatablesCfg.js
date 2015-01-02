@@ -1,12 +1,9 @@
 define(['app'], function ( AppManager) {
-	var tableHeight;
-	// $(document).ready(function(){
-        tableHeight = $(window).height() - 500;
+	var tableHeight = $(window).height() - 500;
 		
-		$(window).resize(function() {
-		  $('.dataTables_scrollBody').css('height', ($(window).height() - 500));
-		});
-	// });
+	$(window).resize(function() {
+	  $('.dataTables_scrollBody').css('height', ($(window).height() - 500));
+	});
 
 	dataTablesCfg = {
 		scrollY:        tableHeight,
