@@ -12,7 +12,29 @@
     form.well {
         padding-left: 0;
         padding-right: 0;
-        padding-bottom: 15px
+        padding-bottom: 15px;
+
+        input {
+            background-color: $white;
+            border: 1px solid #bbb;
+            width: 60px;
+            height: 26px;
+            padding-left: 5px;
+            margin-bottom: 5px;
+            float: left;
+            &[type=checkbox] {
+                width: 30px;
+                margin-top: 8px;
+            }
+
+            &[type=submit] {
+                float: right;
+                margin-right: 20px;
+                width: 90px;
+                height: 60px;
+                border-radius: 2px;
+            }
+        }
     }
 
     label {
@@ -20,25 +42,8 @@
     }
 
     input {
-        background-color: white;
+        background-color: $white;
         border: 1px solid #bbb;
-        width: 60px;
-        height: 26px;
-        padding-left: 5px;
-        margin-bottom: 5px;
-        float: left;
-        &[type=checkbox] {
-            width: 30px;
-            margin-top: 8px;
-        }
-
-        &[type=submit] {
-            float: right;
-            margin-right: 20px;
-            width: 90px;
-            height: 60px;
-            border-radius: 2px;
-        }
     }
 
     fieldset.general {
@@ -112,6 +117,10 @@
     table {
     	width: 100%;
     	border: 1px solid #bbb;
+        
+        tr:nth-child {
+            background-color: $white;
+        }    
  
     	tr:nth-child(even){
     		background-color: #dddddd;

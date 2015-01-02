@@ -1,8 +1,8 @@
 define(['app'], function ( AppManager) {
-	var tableHeight = $(window).height() - 500;
+	var tableHeight = $(window).height() - 400;
 		
 	$(window).resize(function() {
-	  $('.dataTables_scrollBody').css('height', ($(window).height() - 500));
+	  $('.dataTables_scrollBody').css('height', ($(window).height() - 400));
 	});
 
 	dataTablesCfg = {
