@@ -13,6 +13,7 @@
         padding-left: 0;
         padding-right: 0;
         padding-bottom: 15px;
+        margin-bottom: 0px;
 
         input {
             background-color: $white;
@@ -22,6 +23,9 @@
             padding-left: 5px;
             margin-bottom: 5px;
             float: left;
+            &:hover {
+                background-color: $whiteHover;
+            }
             &[type=checkbox] {
                 width: 30px;
                 margin-top: 8px;
@@ -91,32 +95,72 @@
     }
 
 
-    form > ul{
-        margin:0;
-        margin-top:10px;
-        li {
-            border: 1px solid #bbb;
-            a {
-                padding: 3px;
-                text-decoration: none;
-                color: inherit;
-            }
-        }
-    }
     ul, li{
         float: left;
         list-style: none;
     }
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        margin-left: 2px;
+        margin-top: -1px;
+        border: 1px solid #ddd;
+        background-color: rgb(245,245,245);
+        padding: 7px;
+        padding-top: 0;
+        width: 93px;
+        -webkit-border-bottom-right-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        a {
+            display: inline-block;
+            margin-top: 6px;
+            text-decoration: none;
+            color: inherit;
+        }
+        &.selected {
+            background-color: $white;
+        }
+    }
 
 
     .table-wrapper {
-        margin-top: 50px;
+        margin-top: 35px;
         overflow-y: auto;
     }
 
+    .dataTables_scrollBody {
+        border-bottom: 1px solid #bbb;
+    }
+
+    input[type=search] {
+        margin-right: 2px;
+        padding-top: 2px;
+        text-align: center;
+        width: 120px;
+    }
+
     table {
-    	width: 100%;
-    	border: 1px solid #bbb;
+        width: 100%;
+        border: 1px solid #bbb;
+        
+        &.dataTable thead th{
+            border-bottom: 0;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-weight: 500;
+            color: #555;
+            text-align: center;
+        }
+        &.dataTable tbody td {
+            padding: 5px 5px;
+        }
         
         tr:nth-child {
             background-color: $white;
@@ -130,9 +174,11 @@
     		background-color: #bbbbbb;
     	}
 
+        td:first-child {
+            border: none;
+        }
     	td {
     		border-left: 1px solid #bbb;
-    		border-right: 1px solid #bbb;
     	}
     }
 }

@@ -62,16 +62,18 @@ table.dataTable thead .sorting {
         
         li {
             vertical-align: middle;
-            
-            &:hover {
-                a {
-                    background-color: #ccc;
-                }
-            }
+            background-color:#eee;            
+            // &:hover {
+            //     a {
+            //         background-color: #ccc;
+            //     }
+            // }
 
             &.active {
                 a {
-                    background-color: #ddd;
+                    background-color: #eee;
+                    font-weight: bold;
+                    color: #555;
                 }
             }
 
@@ -103,6 +105,7 @@ table.dataTable thead .sorting {
         padding-bottom: 20px;
         padding-left: 10px;
         padding-right: 10px;
+        padding-top: 0;
         position: relative;
 
         &.variable-height {
