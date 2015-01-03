@@ -20,7 +20,6 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
     });
 
     AppManager.on('login:success', function (credentials) {
-        console.log(credentials);
         AppManager.execute('set:user:info', credentials);
 
         // waits for contacts initialization for proper application behavior
@@ -32,46 +31,37 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
         });
     });
 
-            // { name: "Ładunki", url: "packages", navigationTrigger: "show:module:packages" },
-            // { name: "Pojazdy", url: "vehicles", navigationTrigger: "show:module:vehicles" },
-            // { name: "Chat", url: "chat", navigationTrigger: "show:module:chat" },
-            // { name: "Moje oferty", url: "myoffers", navigationTrigger: "show:module:myoffers" },
-            // { name: "Forum", url: "discussion", navigationTrigger: "show:module:discussion" },
-            // { name: "Więcej", url: "", navigationTrigger: "show:module:other", nestedLinks: [
-            //     { name: "Baza firm", url: "companies", navigationTrigger: "show:module:companies" },
-            //     { name: "Kontakty", url: "allcontacts", navigationTrigger: "show:module:allrcontacts" },
-            //     { name: "Archiwum", url: "archive", navigationTrigger: "show:module:archive" }
-
-    AppManager.commands.setHandler('show:module', function (moduleName, args) {
-        AppManager.startModule(moduleName, args);
+    AppManager.commands.setHandler('show:module', function (module, args) {
+        AppManager.startModule(module, args);
     });
 
     AppManager.startApplication = function () {
-        console.log('starting app');
-        // AppManager.loginRegion.destroy();
-        console.log('login destroyed');
         AppManager.module("HeaderApp").start();
         AppManager.module("ConversationsApp").start();
         AppManager.module("ContactsApp").start();
-        
-        AppManager.startModule("LoadMarket");      
+
+        var modules = AppManager.request("header:entities");
+        var firstModule = {
+            name: modules.models[0].get("module"),
+            url: modules.models[0].get("url")
+        };
+
+        AppManager.startModule(firstModule);
     };
 
-    AppManager.startModule = function(moduleName, args){
-        console.log('starting module');
-        var currentApp = moduleName ? AppManager.module(moduleName) : null;
+    AppManager.startModule = function(module, args){
+        var currentApp = module.name ? AppManager.module(module.name) : null;
         if (AppManager.currentApp === currentApp){ return; }
         
         if (AppManager.currentApp){
-            console.log('stopping module:', AppManager.currentApp)
             AppManager.currentApp.stop();
         }
-
+        
+        AppManager.execute("set:active:header", module.url);
         AppManager.currentApp = currentApp;
         
         if(currentApp){            
             currentApp.start(args);
-            // AppManager.module(moduleName).start();
         }
     };
 
