@@ -110,11 +110,7 @@ define(["app"], function(AppManager){
 	    		{date:"2015-04-13", from:{postal: "72236", country: "N"}, to:{postal: "72236", country: "N"}, weight: 60, length: 1, added: "2015-01-08", company:"The Spotted Cougar"},
 	    		{date:"2015-01-02", from:{postal: "32005", country: "PL"}, to:{postal: "15196", country: "PL"}, weight: 230, length: 3, added: "2015-01-02", company:"Access Asia"},
 	    		{date:"2015-03-17", from:{postal: "32005", country: "D"}, to:{postal: "32005", country: "D"}, weight: 2340, length: 5, added: "2015-01-02", company:"Your Choices"},
-	    		{date:"2015-02-12", from:{postal: "32005", country: "D"}, to:{postal: "32005", country: "D"}, weight: 0, length: 1, added: "2015-01-02", company:"William Wanamaker & Sons"},
-	    		{date:"2015-01-03", from:{postal: "12136", country: "PL"}, to:{postal: "12136", country: "PL"}, weight: 0, length: 1, added: "2015-01-01", company:"Fradkin Brothers Furniture"},
-	    		{date:"2015-01-02", from:{postal: "32005", country: "N"}, to:{postal: "12136", country: "N"}, weight: 540, length: 7, added: "2015-01-02", company:"Total Yard Maintenance"},
-	    		{date:"2015-06-04", from:{postal: "32005", country: "D"}, to:{postal: "32005", country: "D"}, weight: 0, length: 1, added: "2015-01-02", company:"Your Choices"},
-	    		{date:"2015-01-02", from:{postal: "00152", country: "GB"}, to:{postal: "12052", country: "GB"}, weight: 610, length: 3, added: "2015-01-02", company:"Access Asia"}
+	    		{date:"2015-02-12", from:{postal: "32005", country: "D"}, to:{postal: "32005", country: "D"}, weight: 0, length: 1, added: "2015-01-02", company:"William Wanamaker & Sons"}
 	    	]);
 
 	    	return messages.models;
