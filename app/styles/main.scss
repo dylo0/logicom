@@ -18,6 +18,16 @@ table.dataTable thead .sorting {
     background: none;
 }
 
+input[type]:focus {
+    border-color: rgba(130, 130, 130, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(130, 130, 130, 0.6);
+    outline: 0 none;
+}
+
+button {
+    outline: 0 none;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -103,8 +113,8 @@ table.dataTable thead .sorting {
         border-bottom: 1px solid #e5e5e5;
         margin-bottom: 0px;
         padding-bottom: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
         padding-top: 0;
         position: relative;
 
@@ -133,22 +143,36 @@ table.dataTable thead .sorting {
 }
 
 
-
 /* login page styling */
-
 #login-label {
     margin-top: 40px;
 }
 
 /* chat styles */
-.well {
-    &.list-container {
-        height: 100%;
-        margin-bottom: 0px;
-        overflow-y: auto;
-        word-wrap: break-word;
-        min-height: 100px;
-    }
+.sidebar .well {
+    height: 100%;
+    margin-bottom: 0px;
+    padding: 0;
+    word-wrap: break-word;
+    min-height: 100px;
+    border: 1px solid #ddd;
+}
+
+.contacts-header {
+    background-color: #bbb;
+    height: 100px;
+}
+
+.list-container {
+    height: calc(100% - 200px);
+    margin-bottom: 0px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    min-height: 100px;
+}
+.contacts-footer {
+    background-color: #bbb;
+    height: 100px;
 }
 
 #chat-messages-container {
@@ -200,11 +224,79 @@ table.dataTable thead .sorting {
     padding: 0px;
 }
 
-.single-contact {
-    border: 0px;
-    border-bottom: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: #eeeeee;
+.panel-group {
+    .single-contact {
+        border: 0px;
+        border-bottom: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #eeeeee;
+        
+        &.panel{
+            margin-top:3px;
+            
+        }
+
+        .panel-heading {
+            padding:0;
+        }
+
+        .icons {
+            width: 100%;
+            height: 40px;
+        }
+
+        a {
+            float: left;
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        ul {
+            list-style: none;
+            font-size: 15px;
+            text-align: left;
+            padding-left: 0;
+            margin-bottom: 0;
+
+            i {
+                width: 20px;
+            }
+        }
+        button {
+            border: 0;
+            width: 100%;
+            height: 40px;
+            padding-top: 5px;
+            text-align: left;
+            background-color: #dfdfdf;
+            padding-left: 18px;
+            color: #555;
+
+            .company {
+                font-size: 11px;
+                font-weight: 300;
+                padding-bottom: 3px;
+                margin-left: 22px;
+                color: #888;
+            }
+
+            i {
+                color: #888;
+                font-size:10px;
+                vertical-align: top;
+                margin-right: 8px;
+            }
+
+            &.collapsed {
+                background-color: #eee;
+            }
+
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+    }
+    
 }
 
 .panel-title {
