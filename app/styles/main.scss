@@ -36,10 +36,9 @@ button {
 }
 
 .header-label {
-    /*text-align: center;*/
-    /*text-shadow: #FFF 0 1px 0, #444 0 -1px;*/
     margin-left: 20px;
-    margin-bottom: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     color: #aaa;
 }
 
@@ -140,6 +139,7 @@ button {
 .sidebar {
     min-height: 100px;
     padding: 0px;
+    margin-top: -40px;
 }
 
 
@@ -314,7 +314,11 @@ button {
 }
 
 #conversations-region {
-    margin-top: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
 }
 
 

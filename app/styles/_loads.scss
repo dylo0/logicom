@@ -138,6 +138,15 @@
     .dataTables_scrollBody {
         border-bottom: 1px solid #bbb;
     }
+    .dataTables_paginate {
+        padding-top: 0.2em;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    a.paginate_button {
+        padding: 0.4em;
+        padding-top: 0.2em;
+    }
 
     input[type=search] {
         margin-right: 2px;

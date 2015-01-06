@@ -19,7 +19,7 @@ define(["app",
             childView: View.MessageView,
             childViewContainer: "#conversation-messages-container",
             template: conversationTmpl,
-            className: "col-sm-6 col-md-3 conversation",
+            className: "col-sm-6 col-md-2 conversation",
             
             ui: {
                 input               : '#conversation-msg-input',
