@@ -20,14 +20,15 @@ define(["app", "backbone.picky"], function(AppManager){
         Entities.headers = new Entities.HeaderCollection([
             { name: "Ładunki", url: "loads", module: 'LoadMarket' },
             { name: "Pojazdy", url: "vehicles", module: 'VehicleMarket' },
+            { name: "Oferty", url: "offers", module: "Organizer" },
             { name: "Chat", url: "chat", module: 'ChatApp' },
-            { name: "Moje oferty", url: "offers", module: "OwnOffer" },
             { name: "Forum", url: "board", module: "Board"},
-            { name: "Więcej", url: "", nestedLinks: [
-                { name: "Baza firm", url: "companies", module: "Company"},
-                { name: "Kontakty", url: "allcontacts", module: "ContactList"},
-                { name: "Archiwum", url: "archive", module: "Archive" }
-        ]}
+            { name: "Baza firm", url: "companies", module: "Company"},
+            { name: "Kontakty", url: "allcontacts", module: "ContactList"}
+        //     { name: "Więcej", url: "", nestedLinks: [
+        //         { name: "Baza firm", url: "companies", module: "Company"},
+        //         { name: "Kontakty", url: "allcontacts", module: "ContactList"}
+        // ]}
     ]);
 
       bindNestedCollection(Entities.headers);
