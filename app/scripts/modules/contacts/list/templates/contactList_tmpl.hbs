@@ -1,7 +1,21 @@
 <div class="well">
-	<div class="contacts-header"></div>
+	<div class="contacts-header">
+		<select style="width:170px" name="group" data-placeholder="Grupa">
+			<option></option>
+			<option>Grupa 1</option>
+			<option>Grupa 2</option>
+			<option>Dodaj grupę...</option>
+		</select>
+		<div class="icons">
+      		<a type="button" class="btn btn-default" title="Dodaj osobę"><i class="fa fa-plus"></i></a>
+      		<a type="button" class="btn btn-default" title="Wiadomość do grupy"><i class="fa fa-comments"></i></a>
+      	</div>
+		<input type="text" placeholder="szukaj">
+	</div>
 	<div class="list-container" id="user-list"> 
 	    <div class="panel-group" id="contact-list-container"></div>
 	</div>
-	<div class="contacts-footer"></div>
+<!-- 	<div class="contacts-footer">
+		<textarea placeholder="Wiadomość do grupy"></textarea> 
+	</div> -->
 </div>
