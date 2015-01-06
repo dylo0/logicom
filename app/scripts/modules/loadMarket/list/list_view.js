@@ -33,7 +33,7 @@ define(["app",
 
             onShow: function () {
                 this.scrollMessages();
-                $(this.ui.selects).select2();
+                $(this.ui.selects).select2({allowClear: true});
                 $('table').DataTable(dataTablesCfg);
             },
 
