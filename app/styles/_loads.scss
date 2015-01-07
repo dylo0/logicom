@@ -12,7 +12,7 @@
     form.well {
         padding-left: 0;
         padding-right: 0;
-        padding-bottom: 15px;
+        padding-bottom: 5px;
         margin-bottom: 0px;
 
         input {
@@ -35,7 +35,7 @@
                 float: right;
                 margin-right: 20px;
                 width: 90px;
-                height: 60px;
+                height: 25px;
                 border-radius: 2px;
             }
         }
@@ -189,5 +189,14 @@
     	td {
     		border-left: 1px solid #bbb;
     	}
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #loads-container form.well {
+        padding-bottom: 15px;
+        input[type=submit] {
+            height: 60px;
+        }
     }
 }

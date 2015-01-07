@@ -139,7 +139,7 @@ button {
 .sidebar {
     min-height: 100px;
     padding: 0px;
-    margin-top: -40px;
+    margin-top: 40px;
 }
 
 
@@ -354,11 +354,11 @@ button {
 }
 
 #conversations-region {
-    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 50px;
+    margin-top: 40px;
 }
 
 
@@ -375,6 +375,7 @@ button {
 
 #conversation-person-name {
     height: 25px;
+    padding-top:3px;
 }
 
 .conversation-body {
@@ -408,7 +409,9 @@ button {
     padding: 0px;
 }
 
-
+.close {
+    line-height: 0.8em
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -454,6 +457,7 @@ button {
 
     .sidebar {
         padding-left: 20px;
+        margin-top: -40px;
     }
     
 
@@ -471,8 +475,10 @@ button {
     }
 
     #conversations-region {
+        position: absolute;
         margin-left: -5px;
         margin-right: 25px;
+        margin-top: 0;
     }
 
 /*    .jumbotron {
