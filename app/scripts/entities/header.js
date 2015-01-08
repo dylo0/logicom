@@ -21,10 +21,8 @@ define(["app", "backbone.picky"], function(AppManager){
             { name: "Ładunki", url: "loads", module: 'LoadMarket' },
             { name: "Pojazdy", url: "vehicles", module: 'VehicleMarket' },
             { name: "Oferty", url: "offers", module: "Organizer" },
-            { name: "Chat", url: "chat", module: 'ChatApp' },
             { name: "Forum", url: "board", module: "Board"},
-            { name: "Baza firm", url: "companies", module: "Company"},
-            { name: "Kontakty", url: "allcontacts", module: "ContactList"}
+            { name: "Baza firm", url: "companies", module: "Company"}
         //     { name: "Więcej", url: "", nestedLinks: [
         //         { name: "Baza firm", url: "companies", module: "Company"},
         //         { name: "Kontakty", url: "allcontacts", module: "ContactList"}

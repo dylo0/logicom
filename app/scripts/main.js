@@ -7,7 +7,6 @@ require([
 	'config/datatablesCfg',
 	'modules/login/login_app',
 	'modules/header/header_app',
-	'modules/chat/chat_app',
 	'modules/loadMarket/load_market_app',
 	'modules/contacts/contacts_app',
 	'modules/conversations/conversations_app',
