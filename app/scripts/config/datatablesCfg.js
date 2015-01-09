@@ -1,12 +1,8 @@
 define(['app'], function ( AppManager) {
 	var tableHeight = $(window).height() - 330;
-		
-	$(window).resize(function() {
-	  $('.dataTables_scrollBody').css('height', ($(window).height() - 330));
-	});
 
 	dataTablesCfg = {
-		scrollY:        tableHeight,
+		scrollY:        100,
         scrollCollapse: true,
         pageLength: 100,
         lengthChange: false,

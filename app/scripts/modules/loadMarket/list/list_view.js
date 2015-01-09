@@ -6,6 +6,7 @@ define(["app",
         function(AppManager, select2, datatables, ChatTpl, MessageTpl){
     AppManager.module("LoadMarket.List.View", function(View, AppManager, Backbone, Marionette, $, _){
         var dataTablesCfg = AppManager.request('config:dataTables');;
+        var tableHeightOffset = 330;
 
         View.MessageView = Backbone.Marionette.ItemView.extend({
             template: MessageTpl,
@@ -32,9 +33,19 @@ define(["app",
             },
 
             onShow: function () {
+                var that = this;
+                $(window).resize(function() {
+                    that.setTableHeight();
+                });
                 this.scrollMessages();
                 $(this.ui.selects).select2({allowClear: true});
                 $('table').DataTable(dataTablesCfg);
+                this.setTableHeight();
+            },
+
+            destroy: function () {
+                console.log('unbound');
+                $(window).off('resize', this.setTableHeight);
             },
 
             onAddChild: function () {
@@ -47,6 +58,11 @@ define(["app",
                 if ( evt.which === ENTER_KEY) {
                     this.sendMessage();
                 }
+            },
+
+            setTableHeight: function () {
+                console.log('setting height from loads list');
+                $('.dataTables_scrollBody').css('height', $(window).height() - tableHeightOffset);
             },
 
             scrollMessages: function () {
