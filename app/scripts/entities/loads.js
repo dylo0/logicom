@@ -181,7 +181,6 @@ define(["app"], function(AppManager){
 			getMessageEntities: function () {
 				var models = initializeMessages();
 				var messages = new Entities.MessageCollection(models);
-				console.log('getting enetities laods')
 				return messages;
 			},
 		};
