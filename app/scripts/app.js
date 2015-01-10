@@ -42,8 +42,8 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
 
         var modules = AppManager.request("header:entities");
         var firstModule = {
-            name: modules.models[0].get("module"),
-            url: modules.models[0].get("url")
+            name: modules.models[2].get("module"),
+            url: modules.models[2].get("url")
         };
 
         AppManager.startModule(firstModule);

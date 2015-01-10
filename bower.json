@@ -17,7 +17,8 @@
     "chai": "~1.7.2",
     "sinon": "~1.7.3",
     "select2": "~3.5.2",
-    "datatables": "~1.10.4"
+    "datatables": "~1.10.4",
+    "backbone-modal": "~1.1.2"
   },
   "devDependencies": {},
   "directory": "bower_components",

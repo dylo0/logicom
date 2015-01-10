@@ -43,6 +43,9 @@ require.config({
         select2: '../bower_components/select2/select2.min',
         datatables: '../bower_components/datatables/media/js/jquery.dataTables',
 
+        'backbone.modal': '../bower_components/bakcbone-modal/backbone.modal',
+        'backbone.modal': '../bower_components/bakcbone-modal/backbone.marionette.modals',
+
         //alias for ionsound
         ionsound: 'vendor/ion.sound.min',
 

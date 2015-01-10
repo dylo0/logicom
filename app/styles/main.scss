@@ -2,6 +2,8 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import '/bower_components/select2/select2.css';
 @import '/bower_components/datatables/media/css/jquery.dataTables.css';
+@import '/bower_components/backbone-modal/backbone.modal.css';
+@import '/bower_components/backbone-modal/backbone.modal.theme.css';
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'constants';
 @import 'loads';

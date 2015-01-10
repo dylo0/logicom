@@ -6,7 +6,7 @@ define(["app",
         function(AppManager, select2, datatables, ChatTpl, MessageTpl){
     AppManager.module("Organizer.List.View", function(View, AppManager, Backbone, Marionette, $, _){
         var dataTablesCfg = AppManager.request('config:dataTables');;
-        var tableHeightOffset = 1030;
+        var tableHeightOffset = 430;
 
         View.MessageView = Backbone.Marionette.ItemView.extend({
             template: MessageTpl,
@@ -47,7 +47,7 @@ define(["app",
             },
             
             setTableHeight: function () {
-                $('.dataTables_scrollBody').css('height', $(window).height() - tableHeightOffset);
+                $('.dataTables_scrollBody').css('height', ($(window).height() - tableHeightOffset) * 0.5);
             },
 
             onInputKeypress: function (evt) {
