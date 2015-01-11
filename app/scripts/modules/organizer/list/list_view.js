@@ -1,12 +1,17 @@
+'use strict';
+
 define(["app",
         "select2",
         "datatables",
-        "hbs!modules/organizer/list/templates/organizer", 
+        "hbs!modules/organizer/list/templates/organizer",
         "hbs!modules/organizer/list/templates/message_tmpl"],
-        function(AppManager, select2, datatables, ChatTpl, MessageTpl){
+        function (AppManager, select2, datatables, ChatTpl, MessageTpl) {
     AppManager.module("Organizer.List.View", function(View, AppManager, Backbone, Marionette, $, _){
         var dataTablesCfg = AppManager.request('config:dataTables');;
         var tableHeightOffset = 430;
+        var localTableCfg = $.extend({}, dataTablesCfg, {
+            searching: false
+        });
 
         View.MessageView = Backbone.Marionette.ItemView.extend({
             template: MessageTpl,
@@ -34,7 +39,7 @@ define(["app",
             onShow: function () {
                 var that = this;
                 $(this.ui.selects).select2({allowClear: true});
-                $('table').DataTable(dataTablesCfg);
+                $('table').DataTable(localTableCfg);
                 this.setTableHeight();
                 
                 $(window).resize(function() {
