@@ -7,7 +7,7 @@ define(["app",
         "hbs!modules/organizer/list/templates/message_tmpl"],
         function (AppManager, select2, datatables, ChatTpl, MessageTpl) {
     AppManager.module("Organizer.List.View", function(View, AppManager, Backbone, Marionette, $, _){
-        var dataTablesCfg = AppManager.request('config:dataTables');;
+        var dataTablesCfg = AppManager.request('config:dataTables');
         var tableHeightOffset = 430;
         var localTableCfg = $.extend({}, dataTablesCfg, {
             searching: false
