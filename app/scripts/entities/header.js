@@ -30,7 +30,7 @@ define(["app", "backbone.picky"], function(AppManager){
     ]);
 
       bindNestedCollection(Entities.headers);
-    }
+    };
 
     var bindNestedCollection = function (headers) {
         headers.each(function (header) {
@@ -40,7 +40,7 @@ define(["app", "backbone.picky"], function(AppManager){
                 header.set('nestedLinks', linksCollection);
             }
         });
-    }
+    };
 
 
     var API = {

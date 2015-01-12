@@ -33,7 +33,7 @@ define(['app'], function ( AppManager) {
 		        "sSortDescending": ": aktywuj, by posortować kolumnę malejąco"
 		    }
 		}
-	}
+	};
 
 	AppManager.reqres.setHandler("config:dataTables", function(){
 	    return dataTablesCfg;

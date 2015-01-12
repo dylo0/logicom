@@ -175,7 +175,7 @@ define(["app"], function(AppManager){
 	    	]);
 
 	    	return messages.models;
-	    }
+	    };
 
 		var API = {
 			getMessageEntities: function () {

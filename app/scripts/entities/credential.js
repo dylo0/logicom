@@ -19,7 +19,7 @@ define(["app"], function(AppManager){
 		    setUserInfo: function (credentials) {
 		        Entities.credentials = credentials;      
 		    }
-		}
+		};
 
 	    AppManager.reqres.setHandler("credential:new", function() {
 	      return API.getCredentialEntity();

@@ -68,7 +68,7 @@ define(["app"], function(AppManager){
 	    		{id:24, username: "Marek Wieczorek", name: "Marek", surname: "Wieczorek", company:"10,000 Auto Parts", adress: "ul. Biegunowa 63", postal: "94-215", city: "Łódź", phone:"792 115 184", email:"Marek@Wieczorek.com", online: 0},
 	    		{id:25, username: "Rafał Michalski", name: "Rafał", surname: "Michalski", company:"Bumper to Bumper Auto Parts", adress: "ul. Kokosowa 22", postal: "85-363", city: "Bydgoszcz", phone:"792 115 184", email:"Rafał@Michalski.com", online: 0},
 	    	]);
-	    }
+	    };
 
 
 	    Entities.initializeUsers = function () {

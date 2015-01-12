@@ -13,7 +13,7 @@ define(['app'], function ( AppManager) {
             mainRegion.height(targetHeight);
             sidebarRegion.height(targetHeight);
         });
-    }
+    };
 
     AppManager.addInitializer(setUIBehavior);
 

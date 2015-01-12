@@ -15,7 +15,7 @@ define(['backbone', 'backbone.marionette'], function ( Backbone) {
         // AppManager.startModule('LoadMarket');
 
         // Mocked login for development
-        AppManager.trigger('login:success', {id: 17, username: "Tomasz"})
+        AppManager.trigger('login:success', {id: 17, username: "Tomasz"});
 
     });
 

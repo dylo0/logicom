@@ -5,18 +5,18 @@ define(["app"], function(AppManager){
 	    	var users = new Entities.UserCollection();
 
 	    	return users.models;
-	    }
+	    };
 
 		var API = {
 			getConversationEntities: function () {
 				var models = initializeConversations();
 
 				//temperary trigger message for testing:
-				AppManager.trigger('incoming:message')
+				AppManager.trigger('incoming:message');
 
 				return new Entities.UserCollection(models);
 			},
-		}
+		};
 
 	    AppManager.reqres.setHandler("conversation:entities", function(){
 	      return API.getConversationEntities();
