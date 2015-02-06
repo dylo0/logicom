@@ -1,4 +1,4 @@
-define(["app", "modules/Organizer/list/list_controller"], function(AppManager, Controller){
+define(["app", "modules/organizer/list/list_controller"], function(AppManager, Controller){
     AppManager.module("Organizer", function(Organizer, AppManager, Backbone, Marionette, $, _){ 
         Organizer.startWithParent = false;
 
